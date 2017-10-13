@@ -1,0 +1,859 @@
+
+@import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Lato|Passion+One');
+
+
+
+/*****************************************************************************/
+/* Form style */
+/*****************************************************************************/
+
+input, select {
+    background-color: #62C2A0;
+    border: 0 none;
+    box-sizing: border-box;
+    color: black;
+    padding: 20px;
+    text-decoration: none;
+    transition: all 0.2s ease 0s;
+    width: 100%;
+    margin-top: 5px;
+    font-size:1.1em;
+    border-radius:0.1em;
+}
+
+
+
+.container input {
+    display: block;
+}
+
+.container .validation-message {
+    position:static;
+}
+
+input:focus {
+    outline: none;
+    background: #006843;
+}
+
+
+input[type=submit] {
+    background: #E96B2E;
+    color:white;
+    cursor:pointer;
+}
+
+input[type=file] {
+    cursor:pointer;
+}
+
+/*****************************************************************************/
+/* DEFAULT STYLE */
+/*****************************************************************************/
+
+html, body {
+    margin:0;
+    padding:0;
+    font-family: 'Passion One', cursive;
+    background:#F4F4F4;
+    /*background-size:100% 100%;*/
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 2px;
+}
+p {
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 1px;
+}
+
+.wrap-container {
+
+    margin:auto;
+    width:100%;
+    text-align:center;
+    overflow: auto;
+    border-radius:.3em;
+    background:#B2813C;
+}
+
+
+
+/*****************************************************************************/
+/* FOOTER */
+/*****************************************************************************/
+footer {
+    background:#272727;
+    display: inline-block;
+    width: 100%;
+    color:white;
+}
+footer li {
+    list-style: none;
+}
+
+.footer-contact {
+    box-sizing: border-box;
+    display:inline-block;
+    width:20%;
+    padding:15px;
+    margin:0.5% 0;
+    color:white;
+    text-decoration:none;
+}
+.footer-contact p {
+    margin:0;
+}
+
+/*****************************************************************************/
+/* SERVICE-BANNER */
+/*****************************************************************************/
+.service-banner {
+    font-family: 'Passion One', cursive;
+    width:100%;
+    min-height:300px;
+    background:white;
+}
+.service-banner .widget {
+    cursor:pointer;
+    box-sizing: border-box;
+    display:inline-block;
+    width:30%;
+    margin: 3% 1.5%  3% 1.5%;
+    padding:15px;
+    color:#272727;
+    text-decoration:none;
+}
+.service-banner .widget h1  {
+    font-family: 'Passion One', cursive;
+}
+
+
+/*****************************************************************************/
+/* HEADER */
+/*****************************************************************************/
+
+.header {
+    width:100%;
+    background:#272727;
+    height:200px;
+}
+
+.header img {
+    height:160px;
+}
+
+
+nav {
+    top: 0px;
+    width: 100%;
+    z-index:1;
+    height: 50px;
+    line-height: 50px;
+    padding: 5px 0;
+}
+
+nav a {
+    color:#F8F8F8;
+    text-decoration:none;
+    padding:10px;
+    transition:.2s;
+    font-size: 1.25em;
+    margin: 0 1%;
+    letter-spacing:1px;
+}
+nav a:hover {
+    font-weight:bold;
+    border-bottom: solid 5px #94C221;
+}
+nav a.active {
+    border-bottom: solid 5px #94C221;
+}
+
+nav .material-icons {
+    font-size:50px;
+}
+
+/*****************************************************************************/
+/* MIDDLE STYLE, TEXT STYLE */
+/*****************************************************************************/
+
+/*Text container*/
+.container {
+    width:100%;
+    text-align:left;
+    font-size:0;
+    background:#E96B2E;
+    overflow: auto;
+}
+
+.container-top {
+    background: #659b49 none repeat scroll 0 0;
+    color: white;
+}
+.container-top p {
+    letter-spacing: 2px;
+}
+
+.text-container {
+    box-sizing: border-box;
+    vertical-align: top;
+    margin:auto;
+    width:50%;
+    padding:15px;
+    font-size:16px;
+    color:white;
+    background:#E96B2E;
+    transition:.5s;
+    border-radius:.3em;
+    margin-top:24px;
+}
+
+
+/*****************************************************************************/
+/* SERVICE PAGE */
+/*****************************************************************************/
+.service-container {
+    box-sizing: border-box;
+    text-align:center;
+    display:inline-block;
+    text-decoration:none;
+    vertical-align: top;
+    min-height:350px;
+    width:50%;
+    padding:15px;
+    color:#9E2275;
+    background:white;
+    transition:.5s;
+}
+
+.service-container h1 {
+    margin-top:10%;
+}
+.service-container button {
+    background: #9E2275;
+    border: 1px solid #d3d3d3;
+    border-radius: 0.3em;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    width:35%;
+    margin: 24px auto;
+    display:block;
+    font-size:1em;
+}
+
+
+/*****************************************************************************/
+/* GALLERY STYLE */
+/*****************************************************************************/
+
+/* IMAGES */
+.img-container {
+    cursor:pointer;
+    box-sizing: border-box;
+    vertical-align: top;
+    display:inline-block;
+    min-height:300px;
+    width:50%;
+    font-size:16px;
+    transition:.5s;
+    background-size: 100% 100%;
+}
+
+.img-container:hover {
+    background-size: 105% 105%;
+}
+
+.hidden-title {
+    display:none;
+    line-height:300px;
+    height:100%;
+    width:100%;
+    margin:0;
+    background:white;
+    color:black;
+    text-align:center;
+    text-decoration:underline;
+    transition:1s;
+    opacity:0.4;
+    font-size:2em;
+}
+
+.hidden-title p {
+    margin:0;
+}
+
+.img-container:hover .hidden-title {
+    display: block;
+}
+
+/* WHEN IMAGE CLICKED */
+.popup {
+    display:none;
+    width:100%;
+    height:100%;
+    background:#272727;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color:white;
+    text-align:center;
+}
+
+.popup-top {
+    background:#3F4448;
+    width:50%;
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
+    margin: 5% auto 0;
+}
+
+.popup-top h2, .popup-top p {
+    margin: 5% auto 0;
+}
+
+.popup img {
+    width:50%;
+    height:60%;
+    vertical-align: middle;
+}
+
+.poptext {
+    width:50%;
+    background:#3F4448;
+    display: inline-block;
+}
+
+.popclose {
+    background-color: #494E51;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    padding: 10px 20px;
+    cursor:pointer;
+    position: absolute;
+    font-size:2em;
+    font-family: 'Lato', sans-serif;
+}
+
+.popclose:hover {
+    background:black;
+    color:#07a5e7;
+}
+
+
+/*****************************************************************************
+/* HERE LIES ALL THE FOCUSED RESPONSIVE DESIGN
+/* USING MEDIA QUERIES, IT'S DIFFERENT SECTIONS BASED ON WIDTH
+/*
+*****************************************************************************/
+
+
+
+
+
+
+
+/*****************************************************************************
+* MOBILE-DEVICES
+* Follwoing code is default up to 700px
+*
+*****************************************************************************/
+@media screen and (max-width: 700px) {
+
+    footer {
+        position:fixed;
+        margin:auto;
+        bottom: 0;
+        display:block;
+    }
+    .footer-contact {
+        width: 30%;
+        padding: 5px;
+        margin: 0.5% 0;
+    }
+    .footer-contact p {
+        display:none;
+    }
+
+    .service-banner .widget:first-child,
+    .service-banner .widget:nth-child(2) {
+        border-bottom: 1px solid #F4F4F4;
+    }
+
+
+    /*services-page*/
+
+    .service-container:first-child,
+    .service-container:nth-child(2),
+    .service-container:nth-child(3) {
+        /*border-right:2px solid #F4F4F4;*/
+        border-bottom:2px solid #F4F4F4;
+    }
+    .service-container {
+        width:100%;
+        min-height:200px;
+        padding: 5px;
+        font-size: 11px;
+        border-bottom: 2px solid #F4F4F4;
+    }
+    .service-container:hover {
+        font-size: 11px;
+    }
+    .container-top {
+        height: 60px;
+        line-height: 60px;
+    }
+    .container-top p {
+        font-size: 14px;
+    }
+}
+
+/*****************************************************************************/
+/* min-width: 320px */
+/*****************************************************************************/
+
+@media screen and (min-width: 320px) {
+
+    nav a {
+        padding: 0;
+        font-size: 0.9em;
+        margin: 0 2%;
+    }
+    nav .material-icons {
+        font-size:24px;
+    }
+
+    .text-container {
+        margin-bottom:41px;
+        width: 90%;
+        padding: 1px;
+        font-size: 11px;
+        margin-top: 12px;
+    }
+    .service-banner .widget {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+        font-size: 13px;
+    }
+    .service-banner {
+        border-bottom: solid 40px #5D963F;
+    }
+
+    /*images-page*/
+    .img-container {
+        min-height: 200px;
+        width: 100%;
+    }
+
+    .popup {
+        font-size:12px;
+    }
+    .popup img {
+        width: 100%;
+    }
+    .poptext {
+        font-size: 10px;
+        width: 100%;
+    }
+    .popup-top {
+        width:100%;
+        margin-top:20%;
+    }
+    .popclose {
+        top: 0;
+        right: 0;
+    }
+}
+
+/*****************************************************************************/
+/* min-width: 375px */
+/*****************************************************************************/
+
+@media screen and (min-width: 360px) {
+
+
+    nav a {
+        padding: 0;
+        font-size: 1em;
+        margin: 0 2%;
+    }
+    nav .material-icons {
+        font-size: 30px;
+    }
+    .text-container {
+        margin-bottom:63px;
+        width: 90%;
+        padding: 1px;
+        font-size: 12px;
+        margin-top: 12px;
+    }
+    .service-banner .widget {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+        font-size: 14px;
+    }
+    .footer-contact {
+        padding: 10px;
+    }
+}
+
+/*****************************************************************************/
+/* min- width 500px */
+/*****************************************************************************/
+
+@media screen and (min-width: 500px) {
+
+    nav a{
+        font-size: 1.1em;
+    }
+    nav .material-icons {
+        font-size: 40px;
+    }
+    .text-container {
+        width:80%;
+        font-size:13px;
+    }
+
+    .service-banner .widget {
+        width: 70%;
+        display: block;
+        margin: auto;
+    }
+
+
+    /*services-page*/
+    .service-container {
+        padding: 15px;
+        font-size: 13px;
+    }
+    .service-container:hover {
+        font-size: 13px;
+    }
+    .container-top {
+        height: 80px;
+        line-height: 80px;
+    }
+    .container-top p {
+        font-size: 18px;
+    }
+
+    /*image-page*/
+    .img-container {
+        min-height: 200px;
+        width:50%;
+    }
+    .poptext {
+        font-size: 12px;
+    }
+    .popup {
+        font-size: 15px;
+    }
+}
+/*****************************************************************************/
+/* TABLET-DEVICES*/
+/*****************************************************************************/
+@media screen and (min-width: 700px) {
+
+    nav a {
+        font-size: 1.25em;
+    }
+    nav .material-icons {
+        font-size: 50px;
+    }
+    .text-container {
+        width:50%;
+        font-size:14px;
+    }
+
+    .service-banner {
+        font-size: 14px;
+        min-height:200px;
+        border-bottom: none;
+    }
+    .service-banner .widget {
+        width: 23.4%;
+        display: inline-block;
+        margin: 3% 4% 3% 4%;
+    }
+    .footer-contact {
+        width:30%;
+        padding:15px;
+
+    }
+    .footer-contact p {
+        display:block;
+        font-size:16px;
+    }
+
+    /*service page*/
+    .service-container:first-child {
+        border-right:2px solid #F4F4F4;
+        border-bottom:2px solid #F4F4F4;
+    }
+    .service-container:nth-child(2) {
+        border-bottom:2px solid #F4F4F4;
+    }
+    .service-container:nth-child(3) {
+        border-right:2px solid #F4F4F4;
+    }
+}
+@media screen and (min-width: 750px) {
+    .service-banner .widget {
+        width: 22%;
+        display: inline-block;
+        margin: 3% 4% 3% 4%;
+    }
+}
+/*****************************************************************************/
+/* min- width 1000px */
+/*****************************************************************************/
+
+@media screen and (min-width: 1000px) and (min-height: 1000px) {
+
+
+    nav a {
+        font-size: 2.25em;
+        letter-spacing: 2px;
+    }
+    nav .material-icons {
+        font-size: 70px;
+    }
+    .text-container {
+        width:70%;
+        font-size: 20px;
+    }
+
+    .service-banner {
+        font-size: 14px;
+    }
+    .service-banner .widget {
+        width: 30%;
+        display: inline-block;
+        margin: 3% 1.5% 3% 1.5%;
+    }
+    .footer-contact {
+        width:30%;
+        padding:15px;
+        font-size:24px;
+
+    }
+
+    .container-top {
+        height: 100px;
+        line-height: 100px;
+    }
+
+    .container-top p {
+        font-size:24px;
+    }
+}
+/*****************************************************************************/
+/* LAPTOP */
+/*****************************************************************************/
+@media screen
+and (min-width: 1100px)
+and (max-width: 1400px)  {
+
+    nav a {
+        font-size: 1.175em;
+
+        padding: 1px;
+        line-height: 110px;
+    }
+    .header {
+        margin-bottom: 0;
+    }
+    .text-container {
+        font-size: 13px;
+        width: 75%;
+        margin-top:24px;
+        margin-bottom: 130px
+    }
+    .service-banner {
+        min-height: 200px;
+        border-bottom:none;
+    }
+    .service-banner .widget {
+        font-size: 12px;
+        width: 28%;
+        margin: 2% 1.5% 2% 1.5%;
+    }
+    .footer-contact p {
+        font-size: 12px;
+    }
+
+    footer {
+        font-size: 14px;
+        position:relative;
+    }
+
+
+    /*services-page*/
+    .service-container:first-child {
+        border-right:2px solid #F4F4F4;
+        border-bottom:2px solid #F4F4F4;
+    }
+    .service-container:nth-child(2) {
+        border-bottom:2px solid #F4F4F4;
+    }
+    .service-container:nth-child(3) {
+        border-right:2px solid #F4F4F4;
+    }
+
+    .service-container:hover {
+        font-size:13.5px;
+    }
+
+    .container-top {
+        height: 100px;
+        line-height: 100px;
+    }
+    .container-top p {
+        font-size: 20px;
+    }
+    /*images-page*/
+    .img-container {
+        min-height: 300px;
+    }
+
+    .popup {
+        font-size:14px;
+    }
+    .popup img {
+        width: 70%;
+    }
+    .poptext {
+        font-size: 12px;
+        width: 70%;
+    }
+    .popup-top {
+        width:70%;
+        margin-top:5%;
+    }
+    .popclose {
+        top: 0;
+        right: 0;
+    }
+}
+
+/*****************************************************************************/
+/* DESKTOP*/
+/*****************************************************************************/
+@media screen
+and (min-width: 1400px)  {
+
+    nav a {
+        font-size: 1.25em;
+        padding: 10px;
+    }
+    .text-container {
+        margin-top:24px;
+        margin-bottom:100px;
+        min-height: 500px;
+    }
+
+
+
+
+    .service-banner {
+        min-height:300px;
+    }
+    .service-banner .widget {
+        cursor:pointer;
+        box-sizing: border-box;
+        display:inline-block;
+        width:30%;
+        margin: 3% 1.5%  3% 1.5%;
+        padding:15px;
+        color:#272727;
+        text-decoration:none;
+    }
+
+    /*services page*/
+    .container-top {
+        height: 100px;
+        line-height: 100px;
+    }
+    .container-top p {
+    font-size: 24px;
+    }
+
+/*images*/
+.img-container {
+    min-height:300px;
+}
+
+    .footer-contact {
+        width:25%;
+        padding:15px;
+    }
+
+    /* WHEN IMAGE CLICKED */
+    .popup-top {
+        width:50%;
+        margin: 5% auto 0;
+        font-size: 18px;
+    }
+    .popup img {
+        width:50%;
+    }
+    .poptext {
+        width:50%;
+        font-size: 14px;
+    }
+
+    .popclose {
+        top:40px;
+        right:100px;
+    }
+    /*****************************************************************************/
+    /* SERVICE PAGE */
+    /*****************************************************************************/
+    .service-container {
+            font-size: 14px;
+            padding:15px;
+    }
+    .service-container:hover {
+        font-size:15px;
+    }
+}
+
+/*****************************************************************************/
+/* FONTS FIX */
+/*****************************************************************************/
+@media screen
+and (min-width: 1400px)
+and (max-height: 900px) {
+    .text-container {
+        font-size:13px;
+    }
+}
+
+@media screen
+and (min-width: 1400px)
+and (min-height: 900px) {
+
+.text-container {
+    font-size:15px;
+}
+.text-container .material-icons {
+    margin-top: 50px;
+}
+}
+/*****************************************************************************/
+/* MISC, IS NEEDED HOWEVER */
+/*****************************************************************************/
+
+
+.service-container p {
+    height:50px;
+}
