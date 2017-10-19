@@ -34,12 +34,12 @@
 <div class="text-container" style="width:45%;background:#D52A55; display:inline-block;">
 
         <h1 style="font-family: 'Passion One', cursive;"> Heder användare </h1>
-            <?php foreach ($questions as $question) : ?>
+            <?php foreach ($users as $user) : ?>
 
-                <a class="users-container" href="<?= $this->url("users/$question->user") ?>">
-                    <img src="<?=  $question->img ?>" style="border-radius:100%;">
-                        <p><?= $question->user?></p>
-                        <p>posts: 100</p>
+                <a class="users-container" href="<?= $this->url("users/$user->name") ?>">
+                    <img src="<?=  $user->img ?>" style="border-radius:100%;">
+                        <p><?= $user->name?> </p>
+                        <p>Posts:<?= $user->postAmount?></p>
                 </a>
             <?php endforeach; ?>
 

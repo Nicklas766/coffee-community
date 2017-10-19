@@ -34,14 +34,22 @@ class PageController implements
      */
     public function getHome()
     {
-        $users = new User($this->di->get("db"));
         $question = new Question($this->di->get("db"));
+        $user     = new User($this->di->get("db"));
 
+        //Sort by highest posts
+        $users = $user->getAllUsers();
+        usort($users, function($a, $b)
+        {
+            return $a->postAmount < $b->postAmount;
+        });
 
-        $tags = $question->getPopularTags();
         $questions = $question->getQuestions();
+        $tags      = $question->getPopularTags();
 
         $questions = array_slice($questions, 0, 4);
+        $tags      = array_slice($tags, 0, 5);
+        $users     = array_slice($users, 0, 4);
 
         $form       = new CreateUserForm($this->di);
         $form->check();
@@ -49,7 +57,7 @@ class PageController implements
         $views = [
             ["page/home/home", ["tags" => $tags], "home"],
             ["components/service-banner", [], "service-banner"],
-            ["page/home/view-questions", ["questions" => $questions], "question"],
+            ["page/home/view-questions", ["questions" => $questions, "users" => $users], "question"],
             ["page/home/signup", ["form" => $form->getHTML()], "signup"],
             ["page/home/wrappedHome", [], "main"],
 
