@@ -215,18 +215,56 @@ nav .material-icons {
 /*****************************************************************************/
 /* SERVICE PAGE */
 /*****************************************************************************/
-.service-container {
+.question-container {
     box-sizing: border-box;
     text-align:center;
     display:inline-block;
     text-decoration:none;
     vertical-align: top;
-    min-height:350px;
-    width:50%;
+    height:104.5px;
+    width:90%;
+    margin: 0.5% 0 0 2%;
     padding:15px;
     color:#9E2275;
     background:white;
     transition:.5s;
+    font-size:14px;
+    /*box-shadow: 1px 1px 5px 1px black;*/
+    border-bottom:1px solid grey;
+}
+
+.question-container:last-child {
+border:none;
+}
+
+.question-container p,
+.question-container h1  {
+    margin:0;
+}
+
+
+
+.question-tags {
+    width:20%;
+    display:inline-block;
+}
+
+.users-container {
+    box-sizing: border-box;
+    text-align:center;
+    display:inline-block;
+    text-decoration:none;
+    vertical-align: top;
+    height:209px;
+    width:40%;
+    margin:1% 2.5%;
+    padding:15px;
+    color:#9E2275;
+    background:white;
+    transition:.5s;
+    font-size:16px;
+    box-shadow: 1px 1px 5px 1px black;
+    border-radius:0.3em;
 }
 
 .service-container h1 {

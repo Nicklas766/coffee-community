@@ -41,7 +41,7 @@ class PageController implements
         $tags = $question->getPopularTags();
         $questions = $question->getQuestions();
 
-        $questions = array_slice($questions, 0, 5);
+        $questions = array_slice($questions, 0, 4);
 
         $form       = new CreateUserForm($this->di);
         $form->check();

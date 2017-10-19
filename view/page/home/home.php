@@ -4,8 +4,8 @@ var distance = $('nav').offset().top,
     $window = $(window),
     homeHeight = $('.service-banner').offset().top - 100;
     $("#up").clone().appendTo("nav");
-    // add min height class to first text-container
-    $(".text-container").first().addClass("text-container-min");
+
+
     // make last div stop when nav-header touch service-container
     var footerHeight = $("footer").height();
     var navHeight = $("nav").first().height();
@@ -70,11 +70,11 @@ $("#up").click(function() {
 });
 </script>
 
-<div class="container">
+<div class="container" style="height:1000px;">
 
 
 
-    <div class="text-container" style="text-align:center;">
+    <div class="text-container"  style="text-align:center;">
         <img src="<?= $app->link("img/hello.png") ?>" style="height:128px;">
 
         <h1>Välkommen till Allt om Kaffe!</h1>
