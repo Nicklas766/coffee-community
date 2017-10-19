@@ -14,24 +14,7 @@
     <img src="<?= $app->link("img/coffee-beans.png") ?>" style="float:left;">
     <img src="<?= $app->link("img/cookie.png") ?>" style="float:right;">
 
-
-
-        <form action="/action_page.php" style="margin:auto; width:60%;">
-
-
-           <input type="text" placeholder="Mejladress" name="email" required>
-
-
-           <input type="password" placeholder="Lösenord" name="psw" required>
-
-           <input type="password" placeholder="Lösenord igen" name="psw-repeat" required>
-
-
-            <input type="submit" class="signupbtn" value="Skapa konto">
-
-            <div style="margin:auto; text-align:center; position: relative;">
-
-       </form>
-
-    </div>
+    <div style="margin:auto; width:60%;">
+        <?= $form ?>
+        </div>
 </div>

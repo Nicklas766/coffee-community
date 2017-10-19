@@ -10,6 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link href="<?= $this->asset("css/simplemde.min.css") ?>" rel="stylesheet">
     <script src="<?= $this->asset("js/jquery.js") ?>"></script>
 
 </head>
@@ -36,6 +38,17 @@
 <?php foreach ($javascripts as $javascript) : ?>
     <script src="<?= $this->asset($javascript) ?>"></script>
 <?php endforeach; ?>
+
+<script src="<?= $this->asset("js/simplemde.min.js") ?>"></script>
+<script>
+    $('textarea').each(function() {
+        var simplemde = new SimpleMDE({
+            element: this,
+            spellChecker: false
+        });
+        simplemde.render();
+    })
+</script>
 
 </body>
 </html>

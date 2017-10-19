@@ -43,7 +43,7 @@ return [
             "callback" => function () {
                 $router = new \Anax\Route\Router();
                 $router->setDI($this);
-                $router->configure("route2.php");
+                $router->configure("route.php");
                 return $router;
             }
         ],
@@ -117,26 +117,27 @@ return [
                 return $obj;
             }
         ],
-        "activeRecordModelExtender" => [
-            "shared" => false,
-            "callback" => function () {
-                $obj = new \Nicklas\Admin\ActiveRecordModelExtender();
-                $obj->setDI($this);
-                return $obj;
-            }
-        ],
-        "adminController" => [
-            "shared" => false,
-            "callback" => function () {
-                $obj = new \Nicklas\Admin\FrontController();
-                $obj->setDI($this);
-                return $obj;
-            }
-        ],
+        // ALL BELOW ARE ADDED
         "pageController" => [
-            "shared" => false,
+            "shared" => true,
             "callback" => function () {
-                $obj = new \Nicklas\Admin\PageController();
+                $obj = new \Nicklas\CoffeeCommunity\PageController();
+                $obj->setDI($this);
+                return $obj;
+            }
+        ],
+        "commentFrontController" => [
+            "shared" => true,
+            "callback" => function () {
+                $obj = new \Nicklas\Comment\FrontController();
+                $obj->setDI($this);
+                return $obj;
+            }
+        ],
+        "pageRenderComment" => [
+            "shared" => true,
+            "callback" => function () {
+                $obj = new \Nicklas\Page\PageRender();
                 $obj->setDI($this);
                 return $obj;
             }
@@ -146,14 +147,6 @@ return [
             "callback" => function () {
                 $obj = new \Anax\Database\DatabaseQueryBuilder();
                 $obj->configure("database.php");
-                return $obj;
-            }
-        ],
-        "bookController" => [
-            "shared" => true,
-            "callback" => function () {
-                $obj = new \Anax\Book\BookController();
-                $obj->setDI($this);
                 return $obj;
             }
         ],

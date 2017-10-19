@@ -22,5 +22,29 @@ $(document).ready(function() {
     };
 
 
+    //
+    //        HEADER AND SCROLL TO FUNCTION
+    //
 
+    var distance = $('nav').offset().top,
+        $window = $(window);
+    // If scrolled enough, make navbar fixed.
+    if ( $window.scrollTop() >= distance ) {
+        $("nav").first().css({
+             'position' : 'fixed',
+             "background" : "#272727",
+        });
+        $("nav a").css("line-height", "normal");
+        $(".header img").css("height", "30px");
+
+    }
+    // If top of page, reset nav style
+    if ( $(".header").offset().top + 83 >= $window.scrollTop() ) {
+        $("nav").first().css({
+             'position' : 'relative',
+             "background" : "none",
+        });
+        $("nav a").first().removeAttr('style');
+        $(".header img").first().removeAttr('style');
+    }
 });

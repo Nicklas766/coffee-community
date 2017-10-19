@@ -31,8 +31,8 @@ $isLogged = false;
 
             <a class="<?= $isActive("") ?>" href="<?= $app->link('') ?>"><img src="<?= $app->link("img/logo.png") ?>"></a>
 
-            <a class="<?= $isActive("contact") ?>" href="<?= $app->link('contact') ?>">Login</a>
-            <a class="<?= $isActive("contact") ?>" href="<?= $app->link('contact') ?>">Skapa konto</a>
+            <a class="<?= $isActive("user/login") ?>" href="<?= $app->link('user/login') ?>">Login</a>
+            <a class="<?= $isActive("contact") ?>" href="<?= $app->link('user/create') ?>">Skapa konto</a>
         <nav>
     <?php endif; ?>
 

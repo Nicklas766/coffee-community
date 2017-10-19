@@ -1,11 +1,11 @@
 <div class="service-banner">
-    <a class="widget" href="<?= $this->url("contact") ?>">
+    <a class="widget" href="<?= $this->url("question/create") ?>">
         <img src="<?= $this->url("img/coffee-cup.png") ?>">
         <h1> Ställ en fråga? </h1>
         <p> Ställ gärna en fråga om kaffe till vår community!</p>
     </a>
 
-    <a class="widget" href="<?= $this->url("services") ?>">
+    <a class="widget" href="<?= $this->url("question") ?>">
         <img src="<?= $this->url("img/coffee-pot.png") ?>">
         <h1> Vad bryggs? </h1>
         <p> Titta gärna på de senaste frågorna som andra användare ställt! </p>

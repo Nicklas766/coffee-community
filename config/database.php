@@ -14,17 +14,10 @@
  */
 
 
- // "dsn"             => "mysql:host=blu-ray.student.bth.se;dbname=nien16;",
- // "username"        => "nien16",
- // "password"        => "J9c84xWzsF5o",
- // "driver_options"  => [\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'"],
- //
-
-
 return [
-    "dsn"             => "mysql:host=mysql18.citynetwork.se;dbname=147081-jsonify;",
-    "username"        => "147081-rz99910",
-    "password"        => "dbforjsonifyproject",
+    "dsn"             => "mysql:host=localhost;dbname=anaxdb;",
+    "username"        => "anax",
+    "password"        => "anax",
     "driver_options"  => [\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'"],
     "fetch_mode"      => \PDO::FETCH_OBJ,
     "table_prefix"    => null,
