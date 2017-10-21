@@ -64,7 +64,7 @@ class PageRender implements PageRenderInterface, InjectionAwareInterface
         // creates the views with viewify function
         array_key_exists("views", $data) && $this->viewify($data["views"]);
 
-        $data["stylesheets"] = ["css/style.css"];
+        $data["stylesheets"] = ["css/style.css", "css/question.css"];
         $data["javascripts"] = ["js/index.js"];
 
         $view->add("components/header", [], "header");

@@ -1,5 +1,8 @@
 # Du har fått en kund som heter WGTOTW (We Gonna Take Over The World) och kunden har en enorm kassa och är villig att spendera en hel del på dig.
 [![Build Status](https://travis-ci.org/Nicklas766/coffee-community.svg?branch=master)](https://travis-ci.org/Nicklas766/coffee-community)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Nicklas766/coffee-community/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Nicklas766/coffee-community/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/Nicklas766/coffee-community/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Nicklas766/coffee-community/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Nicklas766/coffee-community/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Nicklas766/coffee-community/?branch=master)
 
 # Idéer
 Ha samma design för användare som på b1tre bildgalleri.
@@ -10,8 +13,24 @@ https://knowledge.klarna.com/  // Cool design för tags och top contribitours
 
 # lista
 1. Ändra så alla views är bra, tagga sedan modulen git push och integrera i coffee-community hemsidan
-2. pagerender kan vara i projektets egna src, bara att fixa DI
+2. pagerender kan vara i projektets egna src, bara att fixa DI ✔
+3. Skapa jquery för votes vyerna och titta så de stämmer
 
+
+# lista idag
+1. Gör så man kan rösta på kommenterarer och frågor. ✔
+2. Sorteringskrav på krav 4  ✔
+3. Koppla svar till frågorna samt rank ✔
+4. Krav 5 funktion ✔
+5. Skapa översikt av alla användare ✔
+6. Gör så man kan se en användares profil ✔
+7. Visa en översikt på användarens sida om all aktivitet som användaren gjort, dvs frågor, svar, kommentarer, antalet röstningar gjorda samt vilket rykte användaren har. ✔
+
+
+8. Integrera nya views till coffee-community
+
+
+ha en query för up eller down, du gör ändringar i config och view även comment
 
 # Krav 1, 2, 3: Grunden MODULEN
 
@@ -59,10 +78,10 @@ https://knowledge.klarna.com/  // Cool design för tags och top contribitours
 
 | Krav                                                                                                                                                                         | Checkbox |
 |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:--------:|
-| Ett svar kan märkas ut som ett accepterat svar.                                                                                                                              |    X     |
-| Varje svar, fråga och kommentar kan röstas på av användare med +1 (up-vote) eller -1 (down-vote), summan av en fråga/svar/kommentars rank är ett betyg på hur “bra” den var. |    X     |
-| Svaren på en fråga kan sorteras och visas antingen enligt datum, eller rank (antalet röster).                                                                                |    X     |
-| Översikten av frågorna visar hur många svar en fråga har samt vilken rank.                                                                                                   |    X     |
+| Ett svar kan märkas ut som ett accepterat svar.                                                                                                                              |    ✔     |
+| Varje svar, fråga och kommentar kan röstas på av användare med +1 (up-vote) eller -1 (down-vote), summan av en fråga/svar/kommentars rank är ett betyg på hur “bra” den var. |    ✔     |
+| Svaren på en fråga kan sorteras och visas antingen enligt datum, eller rank (antalet röster).                                                                                |    ✔     |
+| Översikten av frågorna visar hur många svar en fråga har samt vilken rank.                                                                                                   |    ✔     |
 |                                                                                                                                                                              |          |
 
 
@@ -71,21 +90,12 @@ https://knowledge.klarna.com/  // Cool design för tags och top contribitours
 EJ PÅBÖRJAD
 # Krav 5: Användare (optionell)
 
-
-| Krav                                                                                                                                                                         | Checkbox |
-|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:--------:|
-| Ett svar kan märkas ut som ett accepterat svar.                                                                                                                              |    X     |
-| Varje svar, fråga och kommentar kan röstas på av användare med +1 (up-vote) eller -1 (down-vote), summan av en fråga/svar/kommentars rank är ett betyg på hur “bra” den var. |    X     |
-| Svaren på en fråga kan sorteras och visas antingen enligt datum, eller rank (antalet röster).                                                                                |    X     |
-| Översikten av frågorna visar hur många svar en fråga har samt vilken rank.                                                                                                   |    X     |
-|                                                                                                                                                                              |          |
-
 Inför ett poängsystem som baseras på användarens aktivitet. Följande kan ge poäng:
 
-    Skriva fråga
-    Skriva svar
-    Skriva kommentar
-    Ranken på skriven fråga, svar, kommentar.
+    Skriva fråga ✔
+    Skriva svar ✔
+    Skriva kommentar ✔
+    Ranken på skriven fråga, svar, kommentar. ✔
 
 Summera allt och sätt det till användarens rykte.
 
@@ -97,8 +107,14 @@ Du kan efter eget tycke modifiera reglerna för hur användarens rykte beräknas
 
 # Krav 6 (optionell)
 
-| Krav                                                                                             | Poäng | Checkbox |
-|:------------------------------------------------------------------------------------------------ |:-----:|:--------:|
-| Användare kan ha en kontrollfråga (favoriträtt) för att återställa lösenordet                    |   2   |    ✔     |
-| Jag tycker att det märks att jag ansträngt mig, jag har wrappers till olika delar, som t.ex home |   2   |    X     |
-|                                                                                                  |       |          |
+| Krav                                                                                                                                             | Poäng | Checkbox |
+|:------------------------------------------------------------------------------------------------------------------------------------------------ |:-----:|:--------:|
+| Användare kan ha en kontrollfråga (favoriträtt) för att återställa lösenordet                                                                    |   2   |    ✔     |
+| Jag tycker att det märks att jag ansträngt mig, jag har wrappers till olika delar, som t.ex home, design                                         |   2   |    X     |
+| Jag använder ajax med hjälp av jquery för att få en snygg transaktion när man accepterar ett svar eller tummar upp något eller kommenterar.      |       |          |
+| Det är givetvis javascript och inte php, men det bidrar otroligt mycket till en bättre hemsida enligt mig och det var utmanande att få till det. |   4   |    ✔     |
+|                                                                                                                                                  |       |          |
+|                                                                                                                                                  |       |          |
+| Man skulle kunan argumentera detta är en php kurs, men det är ju även en ramverks kurs, så känns som ett logiskt extra krav, lite snygg ajax.    |   2   |    ✔     |
+| Jag la till "upp" och "ner" på Svaren                                                                                                            |   1   |    ✔     |
+|                                                                                                                                                  |       |          |
