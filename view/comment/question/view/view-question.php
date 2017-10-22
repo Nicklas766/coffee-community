@@ -28,14 +28,16 @@
                 <?php if($question->question->vote->score === null) : ?>
                     <h1>0</h1>
                 <?php endif; ?>
-                <h1><?= $question->question->vote->score ?></h1>
+                <?php if($question->question->vote->score !== null) : ?>
+                    <h1><?= $question->question->vote->score ?></h1>
+                <?php endif; ?>
                 <i class="dislike material-icons">keyboard_arrow_down</i>
                 <input type="hidden" name="parentId" value="<?= $question->question->id ?>">
             </div>
         </div>
 
         <div class="question-info">
-            <?= count($question->question->vote->likes) ?><i class="like material-icons">thumbs_up_down</i>
+            <span><?= count($question->question->vote->likes) ?></span><i class="like material-icons">thumbs_up_down</i>
             <?= count($question->question->comments) ?><i class="dislike material-icons">comment</i>
             <!-- Tags for question  -->
             <?php foreach ($question->tags as $tag) : ?>
@@ -68,8 +70,6 @@
 
 
 
-
-
     <!--    Commments     -->
     <?php foreach ($question->question->comments as $comment) : ?>
         <div class="comment">
@@ -97,8 +97,8 @@
     <!--    Make comment form     -->
     <p class="kommentera"><i class="material-icons">comment</i>Kommentera</p>
     <form style="width:100%" method="POST">
-        <textarea type="text"></textarea>
-        <input type="hidden" value="<?=$question->id?>">
+        <textarea></textarea>
+        <input type="hidden" value="<?=$question->question->id?>">
         <p class="send-comment">Skicka</p>
     </form>
 </div>

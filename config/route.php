@@ -13,7 +13,7 @@ return [
         ],
         [
             // Routers for the user parts mounts on user/
-            "mount" => "",
+            "mount" => null,
             "file" => __DIR__ . "/route/page.php",
         ],
         [

@@ -11,7 +11,7 @@
         <p> Titta gärna på de senaste frågorna som andra användare ställt! </p>
     </a>
 
-    <a class="widget" href="<?= $this->url("gallery") ?>">
+    <a class="widget" href="<?= $this->url("tags") ?>">
         <img src="<?= $this->url("img/coffee-bag.png") ?>">
         <h1> Sök efter tag</h1>
         <p> Vi har en hel påse med olika taggar, sök gärna bland dem. </p>

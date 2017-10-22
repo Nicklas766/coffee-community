@@ -1,31 +1,46 @@
-<div>
-    <div style="color:black; width:100%; margin:auto; padding:15px; ">
+<div style="min-height:700px; background:#E96B2E; overflow:auto;">
+    <div style="display:flex; margin-top:24px;">
+
+        <div style="width:10%; margin-left:20%; background:white;">
             <h1> <?=$user->name ?> </h1>
             <img src="<?=$user->img ?>">
-            <p> Utskick: <?=$user->postAmount ?> </p>
+            <li><?= $user->reputation ?> <img src="<?= $this->url("img/star.png") ?>"></li>
+            <li> Inlägg: <?=$user->postAmount ?> </li>
 
-            <p> Poäng:   <?=$user->reputation ?> </p>
+            <li>Frågor: <?= count($user->questions) ?></li>
+            <li>Svar:  <?= count($user->posts) ?></li>
+            <li>Kommentarer:  <?= count($user->comments) ?></li>
+        </div>
 
-            <h1> Användarens aktiviterer</h1>
 
+        <div style="width:50%; display:flex; flex-wrap: wrap; background:white;">
+        <h1 style="width:100%;"> Användarens aktiviterer</h1>
+
+        <div style="width:50%">
             <h3>Ställda frågor</h3>
             <?php foreach ($user->questions as $question) : ?>
                 <a href="<?= $this->url("question/$question->id") ?>"><?= $question->title ?></a>
             <?php endforeach; ?>
+        </div>
 
-            <h3>Gett svar till följande frågor</h3>
+        <div style="width:50%">
+            <h3>Svar till följande frågor</h3>
             <?php foreach ($user->answeredQuestions as $question) : ?>
                 <a href="<?= $this->url("question/$question->id") ?>"><?= $question->title ?></a>
             <?php endforeach; ?>
 
+    </div>
 
 
-            <h3>Senaste kommenterarer</h3>
+    <div style="width:50%">
+            <h3>Kommentarer</h3>
             <?php foreach ($user->comments as $comment) : ?>
                 <?= $comment->markdown ?>
             <?php endforeach; ?>
+    </div>
 
-            <h3>Senaste votes</h3>
+        <div style="width:50%">
+            <h3>Röstningar</h3>
             <?php foreach ($user->votes->likes as $vote) : ?>
 
                 <?php if($vote->upVote != null) : ?>
@@ -38,5 +53,7 @@
 
             <?php endforeach; ?>
 
+            </div>
+        </div>
     </div>
 </div>

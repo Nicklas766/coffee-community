@@ -30,6 +30,11 @@ https://knowledge.klarna.com/  // Cool design för tags och top contribitours
 8. Integrera nya views till coffee-community
 
 
+
+
+# VIKTIGT GÖR SÅ MAN KAN REDIGERA SINA FRÅGOR, KOMMENTARER, SVAR
+
+
 ha en query för up eller down, du gör ändringar i config och view även comment
 
 # Krav 1, 2, 3: Grunden MODULEN
@@ -57,8 +62,8 @@ ha en query för up eller down, du gör ändringar i config och view även comme
 |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:--------:|
 | Skapa ett nytt repo för projektet, spara i me/kmom10.                                                                                                                                                                 |    ✔     |
 | Webbsidan skall skyddas av inloggning. Det skall gå att skapa en ny användare. Användaren skall ha en profil som kan uppdateras. Användarens bild skall vara en gravatar.                                             |    ✔     |
-| Webbplatsen skall ha en förstasida, en sida för frågor, en sida för taggar och en sida för användare. Det skall finnas en About-sida med information om webbplatsen, dess GitHub-repo och dig själv.                  |    X     |
-| En användare kan ställa frågor, eller besvara dem. Alla inlägg som en användare gör kan kopplas till denna. Klickar man på en användare så ser man vilka frågor som användaren ställt och vilka frågor som besvarats. |    X     |
+| Webbplatsen skall ha en förstasida, en sida för frågor, en sida för taggar och en sida för användare. Det skall finnas en About-sida med information om webbplatsen, dess GitHub-repo och dig själv.                  |    ✔     |
+| En användare kan ställa frågor, eller besvara dem. Alla inlägg som en användare gör kan kopplas till denna. Klickar man på en användare så ser man vilka frågor som användaren ställt och vilka frågor som besvarats. |    ✔     |
 | En fråga kan ha en eller flera taggar kopplade till sig. När man listar en tagg kan man se de frågor som har den taggen. Klicka på en tagg för att komma till de frågor som har taggen kopplat till sig.              |    ✔     |
 | En fråga kan ha många svar. Varje fråga och svar kan i sin tur ha kommentarer kopplade till sig.                                                                                                                      |    ✔     |
 | Alla frågor, svar och kommentarer skrivs i Markdown.                                                                                                                                                                  |    ✔     |
@@ -66,7 +71,7 @@ ha en query för up eller down, du gör ändringar i config och view även comme
 | Webbplatsen skall finnas på GitHub, tillsammans med en README som beskriver hur man checkar ut och installerar sin egen version.                                                                                      |    X     |
 | Webbplatsen skall finnas i drift med innehåll på studentservern.                                                                                                                                                      |    X     |
 | Kommandot make test skall passera för källkoden.                                                                                                                                                                      |    X     |
-| Repot på GitHub skall vara länkat till en byggtjänst likt Travis/CircleCI och till en tjänst för kodkvalitet likt Scrutinizer/CodeClimate. README-filen på GitHub innehåller motsvarande badges.                      |    X     |
+| Repot på GitHub skall vara länkat till en byggtjänst likt Travis/CircleCI och till en tjänst för kodkvalitet likt Scrutinizer/CodeClimate. README-filen på GitHub innehåller motsvarande badges.                      |    ✔     |
 |                                                                                                                                                                                                                       |          |
 
 

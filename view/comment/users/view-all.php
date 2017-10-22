@@ -1,11 +1,25 @@
 <div>
     <div>
-        <h1> Användare </h1>
+        <h1> Vår community </h1>
     </div>
-    <div style="color:black; width:100%; margin:auto; padding:15px; ">
-        <?php foreach ($users as $user) : ?>
-            <h1><a href="<?= $this->url("users/$user->name") ?>"> <?=$user->name ?> </a></h1>
-            <img src="<?=$user->img ?>">
-        <?php endforeach; ?>
+    <div style="width:30%; margin:auto;">
+        <ul class="popular-list">
+                <?php foreach ($users as $user) : ?>
+                <li class='popular-item'>
+                <div class='popular-rank'><?= $user->name ?></div>
+                <ul class='space-list-items'>
+                    <li>
+                        <a href="<?= $this->url("users/$user->name")?>">
+                        <img src="<?= $user->img?>" class='avatar-users'/>
+                    </a>
+                    </li>
+                    <li>Inlägg:<?= $user->postAmount?></li>
+                    <li><?= $user->reputation ?> <img src="<?= $this->url("img/star.png") ?>"></li>
+                    <li>Reg: <?= strtok($user->created," ") ?> </li>
+                </ul>
+            </li>
+            <?php endforeach; ?>
+
+        </ul>
     </div>
 </div>

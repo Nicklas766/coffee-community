@@ -24,6 +24,9 @@ function ajaxSoftPost(url, data) {
                             for (i = 0; i < $('.comment-vote h3').length; i++) {
                                 $('.comment-vote h3')[i].replaceWith($(res).find('.comment-vote h3')[i]);
                             }
+                            for (i = 0; i < $('.question-info span').length; i++) {
+                                $('.question-info span')[i].replaceWith($(res).find('.question-info span')[i]);
+                            }
                     }
                 });
             }
@@ -64,8 +67,6 @@ function ajaxPost(url, data) {
         <?php $this->renderRegion("form") ?>
     <?php endif; ?>
 </div>
-
-
 
 
 

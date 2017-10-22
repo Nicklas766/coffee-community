@@ -112,7 +112,7 @@ return [
         "pageRender" => [
             "shared" => true,
             "callback" => function () {
-                $obj = new \Anax\Page\PageRender();
+                $obj = new \Nicklas\Page\PageRender();
                 $obj->setDI($this);
                 return $obj;
             }

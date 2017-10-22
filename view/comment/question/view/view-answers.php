@@ -37,8 +37,11 @@
                     <?php if($answer->vote->score === null) : ?>
                         <h1>0</h1>
                     <?php endif; ?>
+                    <?php if($answer->vote->score !== null) : ?>
+                        <h1><?= $answer->vote->score ?></h1>
+                    <?php endif; ?>
 
-                    <h1><?= $answer->vote->score ?></h1>
+
                     <i class="dislike material-icons">keyboard_arrow_down</i>
                     <input type="hidden" name="parentId" value="<?= $answer->id ?>">
                 </div>
@@ -46,7 +49,7 @@
 
 
             <div class="question-info">
-                <?= count($answer->vote->likes) ?><i class="material-icons">thumbs_up_down</i>
+                <span><?= count($answer->vote->likes) ?></span><i class="material-icons">thumbs_up_down</i>
                 <?= count($answer->comments) ?><i class="material-icons">comment</i>
                 <?= $answer->created ?>
             </div>

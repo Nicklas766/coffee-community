@@ -22,7 +22,17 @@ input, select {
     border-radius:0.1em;
 }
 
-
+output {
+    position: absolute;
+    top: 0;
+    background: lightblue;
+    z-index: 100;
+    border-radius: 20px;
+    color: black;
+    width: 50%;
+    padding: 10px;
+    border: 1px solid black;
+}
 
 .container input {
     display: block;
@@ -47,6 +57,46 @@ input[type=submit] {
 input[type=file] {
     cursor:pointer;
 }
+
+/*****************************************************************************/
+/* USERS PAGE */
+/*****************************************************************************/
+
+ul {
+    padding:0;
+}
+li {
+    list-style-type:none;
+}
+
+.popular-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.popular-item {
+    margin: 20px;
+    text-align: center;
+}
+
+.popular-rank {
+    font-size: 20px;
+    margin:10px;
+}
+
+.space-list-items {
+    margin-bottom: 7px;
+}
+
+.avatar-users {
+    width: 100px;
+    border-radius: 50%;
+}
+
+/*****************************************************************************/
+/* PROFILE STYLE PAGE */
+/*****************************************************************************/
 
 /*****************************************************************************/
 /* DEFAULT STYLE */
@@ -149,7 +199,7 @@ footer li {
 nav {
     top: 0px;
     width: 100%;
-    z-index:1;
+    z-index: 10;
     height: 50px;
     line-height: 50px;
     padding: 5px 0;

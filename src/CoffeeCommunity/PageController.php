@@ -64,7 +64,27 @@ class PageController implements
         ];
         $this->di->get("pageRenderComment")->renderPage([
             "views" => $views,
-            "title" => "Login"
+            "title" => "Coffee Community"
+        ]);
+    }
+
+    /**
+     * Renders the homepage
+     *
+     * @return void
+     */
+    public function getTags()
+    {
+        $question = new Question($this->di->get("db"));
+
+        $tags      = $question->getPopularTags();
+
+        $views = [
+            ["page/tags", ["tags" => $tags], "main"],
+        ];
+        $this->di->get("pageRenderComment")->renderPage([
+            "views" => $views,
+            "title" => "Coffee Community | Tags"
         ]);
     }
 }

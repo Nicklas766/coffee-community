@@ -12,18 +12,41 @@
 
 
         <?php foreach ($questions as $question) : ?>
-            <div class="question-container">
+            <div class="question-container" style="display:flex;">
 
-                <div class="question-tags">
+                <div style="width:25%;">
+
+                    <!-- User -->
                     <p><a href="<?= $this->url("users/$question->user") ?>">skapad av <?= $question->user ?></a></p>
+                    <?= $question->created ?>
                     <?php foreach ($question->tags as $tag) : ?>
                         <a href="<?= $this->url("question/tagged/$tag") ?>"><?= $tag ?></a>
+
                     <?php endforeach; ?>
                 </div>
 
-                <div style="width:60%; display:inline-block;">
+                <!-- QQuestion-->
+                <div class="question-text" style="width:50%; min-height:100%;">
                     <p><a href="<?= $this->url("question/$question->id") ?>"><?= $question->title ?></a></p>
                 </div>
+
+             <!-- INFO -->
+                <div style="width:10%; color:#D52A55;">
+                    <h1><i class="material-icons">question_answer</i><?=  $question->answerCount ?></h1>
+                </div>
+                <div style="width:10%; color:#D52A55;">
+                    <?php if($question->question->vote->score === null) : ?>
+                        <h1><i class="material-icons">thumbs_up_down</i>0</h1>
+                    <?php endif; ?>
+                    <?php if($question->question->vote->score !== null) : ?>
+                        <h1><i class="material-icons">thumbs_up_down</i><?= $question->question->vote->score ?></h1>
+                    <?php endif; ?>
+                </div>
+                <div style="width:10%; color:#D52A55;">
+                    <h1><i class="material-icons">people</i><?= count($question->question->vote->likes) ?></h1>
+                </div>
+
+
 
 
             </div>
