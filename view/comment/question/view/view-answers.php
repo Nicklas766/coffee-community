@@ -2,204 +2,108 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-
-<div style="width:50%; margin:auto;">
     <?php foreach ($answers as $answer) : ?>
-        <div class="answer" style="background:#FFF8DC;">
+        <div class="answer">
 
             <!-- Actual answer with score  -->
-            <h1>
-                <img src="<?=  $answer->img ?>">
-                 <a href="<?= $this->url("users/$answer->user") ?>"> <?= $answer->user ?></a>
-             </h1>
-            <?= $answer->markdown ?>
+            <div class="avatar">
+                <a href="<?= $this->url("users/$answer->user") ?>"  style="border-bottom:1px solid grey;">
+                    <div style="width:100%; color:#272727; margin-bottom:5px;"><?= $answer->user ?></div>
+                    <img src="<?=  $answer->img ?>">
+                </a>
+                <p>100 <img src="<?= $this->url("img/star.png") ?>"></p>
+             </div>
 
-            <!-- Score stats -->
-            <h1>score:<?= $answer->vote->score ?></h1>
-            <?php foreach ($answer->vote->likes as $like) : ?>
-                <?= $like->user?>
+             <div class="question-text">
+                <?= $answer->markdown ?>
 
-                <?php if($like->upVote) : ?>
-                    <p>Liked it!</p>
+
+                <!-- Accepted answer or not  -->
+                <?php if($answer->accepted == "yes") : ?>
+                    <p>Im accepted</p>
                 <?php else : ?>
-                    <p>Disliked it!</p>
+                    <p class="acceptme">acceptme</p>
+                    <input type="hidden" value="<?= $answer->id?>">
                 <?php endif; ?>
 
-                <?php endforeach; ?>
+            </div>
 
-            <!-- like or dislike -->
-            <p class="like">Gilla</p>
-            <p class="dislike">Ogilla</p>
-            <input type="hidden" name="parentType" value="post">
-            <input type="hidden" name="parentId" value="<?= $answer->id ?>">
+            <!-- Score stats -->
+            <div class="question-sidebar">
+                <div class="votes">
+                    <!-- like or dislike -->
+                    <i class="like material-icons">keyboard_arrow_up</i>
+
+                    <?php if($answer->vote->score === null) : ?>
+                        <h1>0</h1>
+                    <?php endif; ?>
+
+                    <h1><?= $answer->vote->score ?></h1>
+                    <i class="dislike material-icons">keyboard_arrow_down</i>
+                    <input type="hidden" name="parentId" value="<?= $answer->id ?>">
+                </div>
+            </div>
 
 
-            <!-- Accepted answer or not  -->
-            <?php if($answer->accepted == "yes") : ?>
-                <p>Im accepted</p>
-            <?php else : ?>
-                <p class="acceptme">acceptme</p>
-                <input type="hidden" value="<?= $answer->id?>">
-            <?php endif; ?>
+            <div class="question-info">
+                <?= count($answer->vote->likes) ?><i class="material-icons">thumbs_up_down</i>
+                <?= count($answer->comments) ?><i class="material-icons">comment</i>
+                <?= $answer->created ?>
+            </div>
+
+
+            <!-- Popup for dislikes-->
+            <div class="popup">
+                    <span class="popclose">X</span>
+                    <div class="poptext">
+                    <?php foreach ($answer->vote->likes as $like) : ?>
+
+                        <?php if($like->upVote != null) : ?>
+                            <p><?= $like->user ?> gillar denna fråga</p>
+                        <?php endif; ?>
+
+                        <?php if($like->downVote != null) : ?>
+                            <p><?= $like->user ?> ogillar denna fråga</p>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                    <?php if($answer->vote->likes == null) : ?>
+                        <h1>Ingen har röstat på frågan än</h1>
+                    <?php endif; ?>
+                </div>
+        </div>
 
 
 
-            <!--    Commments     -->
-            <?php foreach ($answer->comments as $comment) : ?>
-                <div style="width:10%; background:white;display: inline-block;">
-                    <img style="height:20px;" src="<?= $comment->img ?>">
+        <!--    Commments     -->
+        <?php foreach ($answer->comments as $comment) : ?>
+            <div class="comment">
+                <div style="width:10%; text-align: left;">
+                    <img style="height:60px;" src="<?= $comment->img ?>">
                     <a href="<?= $this->url("users/$comment->user") ?>"> <?= $comment->user ?></a>
                 </div>
 
-                <!-- Actual comment with score  -->
-                <div class="comment" style="width:80%; display: inline-block;">
+                <div style="width:70%; text-align: left;">
                     <?= $comment->markdown?>
-                    <p>score:<?= $comment->vote->score ?></p>
+                </div>
 
+                <div class="comment-vote" style="width:20%; display:flex; justify-content:center;">
+                    <h3><?= $comment->vote->score ?></h3>
                     <!-- like or dislike -->
-                    <p class="like">Gilla</p>
-                    <p class="dislike">Ogilla</p>
-                    <input type="hidden" name="parentType" value="comment">
+                    <i class="like material-icons">thumb_up</i>
+                    <i class="dislike material-icons">thumb_down</i>
                     <input type="hidden" name="parentId" value="<?= $comment->id ?>">
                 </div>
-            <?php endforeach; ?>
+            </div>
+        <?php endforeach; ?>
 
 
 
         <!--    Make comment form     -->
-        <p class="kommentera">Kommentera</p>
-        <form method="POST">
+        <p class="kommentera"><i class="material-icons">comment</i>Kommentera</p>
+        <form style="width:100%;" method="POST">
             <textarea></textarea>
             <input type="hidden" value="<?=$answer->id?>">
-            <p>Skicka</p>
+            <p class="send-comment">Skicka</p>
         </form>
     </div>
 <?php endforeach; ?>
-
-</div>
-
-
-<!-- JAVASCRIPT FOR ALL AJAX CALLS -->
-
-<script type='text/javascript'>
-
-    // Get needed urls
-    var currentUrl  = "<?= $this->currentUrl() . "?" . $_SERVER['QUERY_STRING']?>";
-    var acceptUrl   = "<?= $this->url("question/accept")?>";
-    var commentUrl  = "<?= $this->url("question/comment")?>";
-    var voteUrl     = "<?= $this->url("question/vote")?>";
-
-
-$(document).ready(function() {
-
-    // Add click event for each answer
-    $( ".answer" ).each(function() {
-
-        // Hide forms, and add click to show forms
-        $(this).children("form").hide();
-        $(this).children(".kommentera").click(function() {
-            $(this).next().toggle("slow", function() {
-              // Animation complete.
-            });
-        });
-
-        // Post comment
-        var id = $(this).children("form").children(":nth-child(2)").val();
-
-        $(this).children("form").children(":nth-child(3)").on("click", function(){
-            var text = $(this).prev().prev().val();
-            var url = commentUrl + "/" + id; // the script where you handle the form input.
-            if (text == "") {
-                return true;
-            }
-            ajaxPost(url, {text: text});
-            console.log(id);
-            console.log(text);
-        });
-
-        // Accept answer
-        $(this).children(".acceptme").on("click", function(){
-            id = $(this).next().val();
-            url = acceptUrl + "/" + id;
-            ajaxPost(url, {});
-        });
-
-        // Up vote Answer
-        $(this).children(".like").on("click", function() {
-            var parentType = $(this).next().next().val();
-            var parentId = $(this).next().next().next().val();
-            console.log("iwasclicked");
-                ajaxPost(voteUrl, {parentType: parentType, parentId: parentId, upVote: 1});
-            });
-
-        // Down vote Answer
-        $(this).children(".dislike").on("click", function() {
-            var parentType = $(this).next().val();
-            var parentId = $(this).next().next().val();
-            console.log("iwasclicked");
-            ajaxPost(voteUrl, {parentType: parentType, parentId: parentId, downVote: 1});
-        });
-});
-
-    // Add up vote events on each comment
-    $( ".comment" ).each(function() {
-        // Up vote Answer
-        $(this).children(".like").on("click", function() {
-            var parentType = $(this).next().next().val();
-            var parentId = $(this).next().next().next().val();
-                ajaxPost(voteUrl, {parentType: parentType, parentId: parentId, upVote: 1});
-            });
-
-        // Down vote Answer
-        $(this).children(".dislike").on("click", function() {
-            var parentType = $(this).next().val();
-            var parentId = $(this).next().next().val();
-            console.log("iwasclicked");
-            ajaxPost(voteUrl, {parentType: parentType, parentId: parentId, downVote: 1});
-        });
-    });
-
-
-
-// --------------------------- Question
-    // Up vote question
-    $(".question").children(".like").on("click", function() {
-        var parentType = $(this).next().next().val();
-        var parentId = $(this).next().next().next().val();
-        console.log("iwasclicked");
-            ajaxPost(voteUrl, {parentType: parentType, parentId: parentId, upVote: 1});
-        });
-
-    // Down vote question
-    $(".question").children(".dislike").on("click", function() {
-        var parentType = $(this).next().val();
-        var parentId = $(this).next().next().val();
-        console.log("iwasclicked");
-        ajaxPost(voteUrl, {parentType: parentType, parentId: parentId, downVote: 1});
-    });
-
-    // Post comment
-    var id = $(".question").children("form").children(":nth-child(2)").val();
-
-    $(".question").children("form").children(":nth-child(3)").on("click", function(){
-        var text = $(this).prev().prev().val();
-        var url = commentUrl + "/" + id; // the script where you handle the form input.
-        if (text == "") {
-            return true;
-        }
-        ajaxPost(url, {text: text});
-        console.log(id);
-        console.log(text);
-    });
-
-    // Hide forms, and add click to show forms
-    $(".question").children("form").hide();
-    $(".question").children(".kommentera").click(function() {
-        $(this).next().toggle("slow", function() {
-          // Animation complete.
-        });
-});
-
-
-});
-</script>

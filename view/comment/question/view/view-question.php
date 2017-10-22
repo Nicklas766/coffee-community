@@ -25,16 +25,18 @@
             <div class="votes">
                 <!-- like or dislike -->
                 <i class="like material-icons">keyboard_arrow_up</i>
+                <?php if($question->question->vote->score === null) : ?>
+                    <h1>0</h1>
+                <?php endif; ?>
                 <h1><?= $question->question->vote->score ?></h1>
                 <i class="dislike material-icons">keyboard_arrow_down</i>
-                <input type="hidden" name="parentType" value="post">
                 <input type="hidden" name="parentId" value="<?= $question->question->id ?>">
             </div>
         </div>
 
         <div class="question-info">
-            <?= count($question->question->vote->likes) ?><i class="material-icons">thumbs_up_down</i>
-            <?= count($question->question->comments) ?><i class="material-icons">comment</i>
+            <?= count($question->question->vote->likes) ?><i class="like material-icons">thumbs_up_down</i>
+            <?= count($question->question->comments) ?><i class="dislike material-icons">comment</i>
             <!-- Tags for question  -->
             <?php foreach ($question->tags as $tag) : ?>
                 <a href="<?= $this->url("question/tagged/$tag") ?>"><?= $tag ?></a>
@@ -65,75 +67,41 @@
 
 
 
-<script>
-
-$(document).ready(function() {
-
-
-    $(".question-info").first().click(function(){
-
-        var popup = $(this).next('.popup');
-        popup.css("display","block");
-
-       popup.children(".popclose").click(function() {
-            popup.css("display","none");
-        });
-    });
-
-});
-
-</script>
-
-
 
 
 
     <!--    Commments     -->
     <?php foreach ($question->question->comments as $comment) : ?>
         <div class="comment">
-        <div>
-            <img style="height:60px;" src="<?= $comment->img ?>">
-            <a href="<?= $this->url("users/$comment->user") ?>"> <?= $comment->user ?></a>
-        </div>
+            <div style="width:10%; text-align: left;">
+                <img style="height:60px;" src="<?= $comment->img ?>">
+                <a href="<?= $this->url("users/$comment->user") ?>"> <?= $comment->user ?></a>
+            </div>
 
-            <?= $comment->markdown?>
-            <h3><?= $comment->vote->score ?></h3>
-            <!-- like or dislike -->
-            <p class="like"><i class="material-icons">thumb_up</i></p>
-            <p class="dislike"><i class="material-icons">thumb_down</i></p>
-            <input type="hidden" name="parentType" value="comment">
-            <input type="hidden" name="parentId" value="<?= $comment->id ?>">
+            <div style="width:70%; text-align: left;">
+                <?= $comment->markdown?>
+            </div>
+
+            <div class="comment-vote" style="width:20%; display:flex; justify-content:center;">
+                <h3><?= $comment->vote->score ?></h3>
+                <!-- like or dislike -->
+                <i class="like material-icons">thumb_up</i>
+                <i class="dislike material-icons">thumb_down</i>
+                <input type="hidden" name="parentId" value="<?= $comment->id ?>">
+            </div>
         </div>
     <?php endforeach; ?>
-
-
-
-
-
 
 
 
     <!--    Make comment form     -->
     <p class="kommentera"><i class="material-icons">comment</i>Kommentera</p>
     <form style="width:100%" method="POST">
-        <textarea></textarea>
+        <textarea type="text"></textarea>
         <input type="hidden" value="<?=$question->id?>">
-        <p>Skicka</p>
+        <p class="send-comment">Skicka</p>
     </form>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <div class="sort-answers">
     <p>Sortering</p>
@@ -141,6 +109,6 @@ $(document).ready(function() {
     <a href="<?= $this->url("question/$question->id/points") . "?" . $_SERVER['QUERY_STRING'] ?>">Poäng</a>
     <a href="<?= $this->url("question/$question->id/vote")   . "?" . $_SERVER['QUERY_STRING'] ?>">Röster</a>
 
-    <a href="<?= $this->url($this->currentUrl()) ?>?order=up">Upp</a>
-    <a href="<?= $this->url($this->currentUrl()) ?>?order=down">Ner</a>
+    <a href="<?= $this->url($this->currentUrl()) ?>?order=up"><i class="material-icons">arrow_upward</i></a>
+    <a href="<?= $this->url($this->currentUrl()) ?>?order=down"><i class="material-icons">arrow_downward</i></a>
 </div>

@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="<?= $this->asset("css/simplemde.min.css") ?>" rel="stylesheet">
-    <script src="<?= $this->asset("js/jquery.js") ?>"></script>
+    <script src="<?= $this->asset("js/jquery.min.js") ?>"></script>
 
 
 </head>
@@ -42,7 +42,7 @@
 <script src="<?= $this->asset("js/simplemde.min.js") ?>"></script>
 <script>
     $('textarea').each(function() {
-        var simplemde = new SimpleMDE({
+        simplemde = new SimpleMDE({
             element: this,
             spellChecker: false
         });

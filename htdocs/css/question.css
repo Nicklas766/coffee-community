@@ -1,4 +1,8 @@
 
+
+/******************************************************************************
+Question
+******************************************************************************/
 .question {
     width:50%;
     margin:auto;
@@ -8,26 +12,19 @@
     margin-top: 24px;
 }
 
-
-
 .avatar {
     width:15%;
     background:white;
-
-
-
 }
 .avatar a img {
     border-radius:100%;
     box-shadow: 1px 1px 4px 1px black;
-
 }
 
 .avatar a {
     text-decoration:none;
     font-size:1.5em;
     font-family: 'Passion One', cursive;
-
 }
 
 .question-text {
@@ -35,7 +32,6 @@
     text-align: left;
     background:white;
     width: 65%;
-
 }
 
 .question-info {
@@ -51,7 +47,6 @@
 .question-sidebar {
     width:20%;
     background:White;
-
     display:flex;
     text-align:center;
     justify-content: center;
@@ -80,13 +75,13 @@
     color:white;
     background: #272727;
     border-top-right-radius: 0.3em;
-border-top-left-radius: 0.3em;
+    border-top-left-radius: 0.3em;
 }
 .title-img {
-        width: 20%;
-        display: flex;
-        text-align: center;
-        justify-content: center;
+    width: 20%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
 }
 .question-title img {
     align-self: center
@@ -100,13 +95,24 @@ border-top-left-radius: 0.3em;
 
 
 
-
-
-/*COMMENTS*/
+/******************************************************************************
+Comment
+******************************************************************************/
 .comment {
     background:orange;
     width:100%;
+    display:flex;
+}
 
-        display:flex;
+/******************************************************************************
+Answer
+******************************************************************************/
 
+.answer {
+    width:50%;
+    margin:auto;
+    display:flex;
+    flex-wrap:wrap;
+    color:#272727;
+    margin-top: 24px;
 }

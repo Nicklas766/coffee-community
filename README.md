@@ -118,3 +118,7 @@ Du kan efter eget tycke modifiera reglerna för hur användarens rykte beräknas
 | Man skulle kunan argumentera detta är en php kurs, men det är ju även en ramverks kurs, så känns som ett logiskt extra krav, lite snygg ajax.    |   2   |    ✔     |
 | Jag la till "upp" och "ner" på Svaren                                                                                                            |   1   |    ✔     |
 |                                                                                                                                                  |       |          |
+
+Jag la ner tid och energi på designen, jag ville göra en bra frontend, en sida som jag kan vara stolt över att visa andra.
+Ja la ner mycket tid på hur frågorna ser ut, man kan trycka för att få up en popup med info med mera. Det som är riktigt coolt
+med min question-sida, är att alla "likes", är ajax och uppdaterar endast siffrorna, så det blir en riktigt "smooth-transaktion"
