@@ -1,4 +1,4 @@
-<div style="min-height:700px;">
+<div style="min-height:700px; margin-bottom: 100px;">
 
     <h1> Hej <?=$user->name ?>! </h1>
     <div style="width:50%; margin:auto; display:flex; flex-wrap: wrap; background:white; margin-bottom:100px; box-shadow: 1px 1px 3px 1px black;">
@@ -45,11 +45,11 @@
         <h3>Din röst historik <i class="material-icons">thumbs_up_down</i></h3>
         <?php foreach ($user->votes->likes as $vote) : ?>
 
-            <?php if($vote->upVote != null) : ?>
+            <?php if ($vote->upVote != null) : ?>
                 <li>Du gillade en <?= $vote->parentType ?></li>
             <?php endif; ?>
 
-            <?php if($vote->downVote != null) : ?>
+            <?php if ($vote->downVote != null) : ?>
                 <li>Du ogillade en <?= $vote->parentType ?></li>
             <?php endif; ?>
 

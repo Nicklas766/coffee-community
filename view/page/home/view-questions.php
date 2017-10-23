@@ -35,10 +35,10 @@
                     <h1><i class="material-icons">question_answer</i><?=  $question->answerCount ?></h1>
                 </div>
                 <div style="width:10%; color:#D52A55;">
-                    <?php if($question->question->vote->score === null) : ?>
+                    <?php if ($question->question->vote->score === null) : ?>
                         <h1><i class="material-icons">thumbs_up_down</i>0</h1>
                     <?php endif; ?>
-                    <?php if($question->question->vote->score !== null) : ?>
+                    <?php if ($question->question->vote->score !== null) : ?>
                         <h1><i class="material-icons">thumbs_up_down</i><?= $question->question->vote->score ?></h1>
                     <?php endif; ?>
                 </div>
@@ -59,7 +59,7 @@
                 <a class="users-container" href="<?= $this->url("users/$user->name") ?>">
                     <img src="<?=  $user->img ?>" style="border-radius:100%;">
                         <p><?= $user->name?> </p>
-                        <p>Posts:<?= $user->postAmount?></p>
+                        <p>inlägg:<?= $user->postAmount?></p>
                 </a>
             <?php endforeach; ?>
 

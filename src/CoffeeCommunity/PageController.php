@@ -39,9 +39,8 @@ class PageController implements
 
         //Sort by highest posts
         $users = $user->getAllUsers();
-        usort($users, function($a, $b)
-        {
-            return $a->postAmount < $b->postAmount;
+        usort($users, function ($current, $next) {
+            return $current->postAmount < $next->postAmount;
         });
 
         $questions = $question->getQuestions();

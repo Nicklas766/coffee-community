@@ -19,10 +19,10 @@
             <div style="width:10%; background:grey;">
             <h1><i class="material-icons">question_answer</i><?=  $question->answerCount ?></h1>
 
-            <?php if($question->question->vote->score === null) : ?>
+            <?php if ($question->question->vote->score === null) : ?>
                 <h1><i class="material-icons">thumbs_up_down</i>0</h1>
             <?php endif; ?>
-            <?php if($question->question->vote->score !== null) : ?>
+            <?php if ($question->question->vote->score !== null) : ?>
                 <h1><i class="material-icons">thumbs_up_down</i><?= $question->question->vote->score ?></h1>
             <?php endif; ?>
 

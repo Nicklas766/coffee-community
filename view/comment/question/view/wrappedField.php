@@ -27,6 +27,9 @@ function ajaxSoftPost(url, data) {
                             for (i = 0; i < $('.question-info span').length; i++) {
                                 $('.question-info span')[i].replaceWith($(res).find('.question-info span')[i]);
                             }
+                            for (i = 0; i < $('.question-info div:nth-child(4)').length; i++) {
+                                $('.question-info div:nth-child(4)')[i].replaceWith($(res).find('.question-info div:nth-child(4)')[i]);
+                            }
                     }
                 });
             }
@@ -54,21 +57,22 @@ function ajaxPost(url, data) {
 
 
 
-<div class="question-wrapper">
+<div class="question-wrapper" style="background:#D52A55; overflow:auto;">
 
     <?php if ($this->regionHasContent("question")) : ?>
         <?php $this->renderRegion("question") ?>
     <?php endif; ?>
 
+    <div style="background:#1F9C70; overflow:auto; color:white;">
+        <?php if ($this->regionHasContent("answer")) : ?>
+                <?php $this->renderRegion("answer") ?>
+        <?php endif; ?>
 
-
-    <?php if ($this->regionHasContent("answer")) : ?>
-        <?php $this->renderRegion("answer") ?>
-    <?php endif; ?>
 
     <?php if ($this->regionHasContent("form")) : ?>
         <?php $this->renderRegion("form") ?>
     <?php endif; ?>
+    </div>
 </div>
 
 
@@ -137,7 +141,7 @@ $(document).ready(function() {
     $(".acceptme").on("click", function(){
         id = $(this).next().val();
         url = acceptUrl + "/" + id;
-        ajaxPost(url, {});
+        ajaxSoftPost(url, {});
     });
 
 

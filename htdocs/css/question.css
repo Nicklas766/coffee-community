@@ -88,13 +88,46 @@ Question
 }
 
 .sort-answers {
-    background:grey;
+    color:white;
     width:50%;
     margin:auto;
+    margin-top:24px;
+    margin-bottom:24px;
+    display:flex;
+}
+
+.sort-answers a{
+    color:white;
+}
+.sort-answers select{
+    background:white;
+}
+
+.question-info div
+{
+    cursor:pointer;
+}
+.question-info a
+{
+    color:white;
 }
 
 
 
+.send-comment {
+    background: #E96B2E;
+    color: white;
+    cursor: pointer;
+    border: 0 none;
+    box-sizing: border-box;
+    padding: 20px;
+    text-decoration: none;
+    transition: all 0.2s ease 0s;
+    width: 100%;
+    margin-top: 5px;
+    font-size:1.1em;
+    border-radius:0.1em;
+}
 /******************************************************************************
 Comment
 ******************************************************************************/
@@ -103,6 +136,7 @@ Comment
     width:100%;
     display:flex;
 }
+
 
 /******************************************************************************
 Answer

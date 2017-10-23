@@ -25,10 +25,10 @@
             <div class="votes">
                 <!-- like or dislike -->
                 <i class="like material-icons">keyboard_arrow_up</i>
-                <?php if($question->question->vote->score === null) : ?>
+                <?php if ($question->question->vote->score === null) : ?>
                     <h1>0</h1>
                 <?php endif; ?>
-                <?php if($question->question->vote->score !== null) : ?>
+                <?php if ($question->question->vote->score !== null) : ?>
                     <h1><?= $question->question->vote->score ?></h1>
                 <?php endif; ?>
                 <i class="dislike material-icons">keyboard_arrow_down</i>
@@ -63,15 +63,15 @@
 
                 <?php foreach ($question->question->vote->likes as $like) : ?>
 
-                    <?php if($like->upVote != null) : ?>
+                    <?php if ($like->upVote != null) : ?>
                         <p><?= $like->user ?> gillar denna fråga</p>
                     <?php endif; ?>
 
-                    <?php if($like->downVote != null) : ?>
+                    <?php if ($like->downVote != null) : ?>
                         <p><?= $like->user ?> ogillar denna fråga</p>
                     <?php endif; ?>
                 <?php endforeach; ?>
-                <?php if($question->question->vote->likes == null) : ?>
+                <?php if ($question->question->vote->likes == null) : ?>
                     <h1>Ingen har röstat på frågan än</h1>
                 <?php endif; ?>
                 </div>
@@ -83,7 +83,7 @@
 
     <!--    Commments     -->
     <?php foreach ($question->question->comments as $comment) : ?>
-        <div class="comment">
+        <div class="comment" style="display:none;">
             <div style="width:10%; text-align: left;">
                 <img style="height:60px;" src="<?= $comment->img ?>">
                 <a href="<?= $this->url("users/$comment->user") ?>"> <?= $comment->user ?></a>
@@ -115,11 +115,19 @@
 </div>
 
 <div class="sort-answers">
-    <p>Sortering</p>
-    <a href="<?= $this->url("question/$question->id/date")   . "?" . $_SERVER['QUERY_STRING'] ?>">Datum</a>
-    <a href="<?= $this->url("question/$question->id/points") . "?" . $_SERVER['QUERY_STRING'] ?>">Poäng</a>
-    <a href="<?= $this->url("question/$question->id/vote")   . "?" . $_SERVER['QUERY_STRING'] ?>">Röster</a>
+    <h1 style="width:10%;"> <i class="material-icons">question_answer</i><?= $question->answerCount ?> </h1>
 
-    <a href="<?= $this->url($this->currentUrl()) ?>?order=up"><i class="material-icons">arrow_upward</i></a>
-    <a href="<?= $this->url($this->currentUrl()) ?>?order=down"><i class="material-icons">arrow_downward</i></a>
+    <div style="width:30%; margin-left:50%;">
+        <select name="forma" style="width:100%;" onchange="location = this.value;">
+             <option value="date<?= "?" . $_SERVER['QUERY_STRING'] ?>">Välj sortering</option>
+             <option value="<?= $this->url("question/$question->id/date")   . "?" . $_SERVER['QUERY_STRING'] ?>">Datum</option>
+             <option value="<?= $this->url("question/$question->id/points")   . "?" . $_SERVER['QUERY_STRING'] ?>">Poäng</option>
+             <option value="<?= $this->url("question/$question->id/vote")   . "?" . $_SERVER['QUERY_STRING'] ?>">Röster</option>
+             <option value="<?= $this->url("question/$question->id/accept")   . "?" . $_SERVER['QUERY_STRING'] ?>">Accepterade</option>
+        </select>
+    </div>
+    <div style="width:10%; display:flex; justify-content:center; align-items:center;">
+        <a href="<?= $this->url($this->currentUrl()) ?>?order=up"><i style="font-size:34px;" class="material-icons">arrow_upward</i></a>
+        <a href="<?= $this->url($this->currentUrl()) ?>?order=down"><i style="font-size:34px;" class="material-icons">arrow_downward</i></a>
+    </div>
 </div>

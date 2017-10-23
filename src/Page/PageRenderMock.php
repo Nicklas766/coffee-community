@@ -60,6 +60,7 @@ class PageRenderMock implements PageRenderInterface, InjectionAwareInterface
     public function renderPage($data, $status = 200)
     {
         // creates the views with viewify function
+        $status = 200;
         array_key_exists("views", $data) && $this->viewify($data["views"]);
 
         $data["stylesheets"] = ["css/style.css"];

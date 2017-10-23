@@ -103,16 +103,16 @@
         },
         {
             "name": "anax/database",
-            "version": "v1.1.7",
+            "version": "v1.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/database.git",
-                "reference": "e5056f57cf29d13fb07ef18ed7ff3ea596e7c25f"
+                "reference": "5d27c49e531fbe44285b2a4df300598f78f0cac1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/database/zipball/e5056f57cf29d13fb07ef18ed7ff3ea596e7c25f",
-                "reference": "e5056f57cf29d13fb07ef18ed7ff3ea596e7c25f",
+                "url": "https://api.github.com/repos/canax/database/zipball/5d27c49e531fbe44285b2a4df300598f78f0cac1",
+                "reference": "5d27c49e531fbe44285b2a4df300598f78f0cac1",
                 "shasum": ""
             },
             "require": {
@@ -151,7 +151,7 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2017-10-12T14:17:22+00:00"
+            "time": "2017-10-23T10:16:30+00:00"
         },
         {
             "name": "anax/di",
@@ -862,16 +862,16 @@
         },
         {
             "name": "nicklas/comment",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Nicklas766/Comment.git",
-                "reference": "7c734bc99b8265d85217c626c8b694aaca62af68"
+                "reference": "7c8781594e51dd338e3aa92869cbb545fc659b82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Nicklas766/Comment/zipball/7c734bc99b8265d85217c626c8b694aaca62af68",
-                "reference": "7c734bc99b8265d85217c626c8b694aaca62af68",
+                "url": "https://api.github.com/repos/Nicklas766/Comment/zipball/7c8781594e51dd338e3aa92869cbb545fc659b82",
+                "reference": "7c8781594e51dd338e3aa92869cbb545fc659b82",
                 "shasum": ""
             },
             "require": {
@@ -917,7 +917,7 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2017-10-21T15:00:07+00:00"
+            "time": "2017-10-23T12:45:27+00:00"
         },
         {
             "name": "scrivo/highlight.php",

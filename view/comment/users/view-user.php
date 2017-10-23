@@ -1,5 +1,5 @@
-<div style="min-height:700px; background:#E96B2E; overflow:auto;">
-    <div style="display:flex; margin-top:24px;">
+<div style="min-height:700px; background:#E96B2E; overflow:auto; ">
+    <div style="display:flex; margin-top:24px; margin-bottom: 100px;">
 
 
 
@@ -47,11 +47,11 @@
             <h3>Användarens röst historik <i class="material-icons">thumbs_up_down</i></h3>
             <?php foreach ($user->votes->likes as $vote) : ?>
 
-                <?php if($vote->upVote != null) : ?>
+                <?php if ($vote->upVote != null) : ?>
                     <li><?=$user->name ?> gillade en <?= $vote->parentType ?></li>
                 <?php endif; ?>
 
-                <?php if($vote->downVote != null) : ?>
+                <?php if ($vote->downVote != null) : ?>
                     <li><?=$user->name ?> ogillade en <?= $vote->parentType ?></li>
                 <?php endif; ?>
 

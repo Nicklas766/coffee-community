@@ -15,7 +15,7 @@
                     </li>
                     <li>Inlägg:<?= $user->postAmount?></li>
                     <li><?= $user->reputation ?> <img src="<?= $this->url("img/star.png") ?>"></li>
-                    <li>Reg: <?= strtok($user->created," ") ?> </li>
+                    <li>Reg: <?= strtok($user->created, " ") ?> </li>
                 </ul>
             </li>
             <?php endforeach; ?>

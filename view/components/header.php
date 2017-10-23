@@ -9,11 +9,7 @@ $isLogged = isset($_SESSION["user"]);
 
 <div class="header">
 
-
-
-
-
-    <?php if($isLogged) : ?>
+    <?php if ($isLogged) : ?>
         <nav id="navbar">
             <a class="<?= $isActive("about") ?>" href="<?= $app->link('about') ?>">Om oss</a>
             <a class="<?= $isActive("users") ?>" href="<?= $app->link('users') ?>">Community</a>
@@ -27,7 +23,7 @@ $isLogged = isset($_SESSION["user"]);
         <nav>
     <?php endif; ?>
 
-    <?php if(!$isLogged) : ?>
+    <?php if (!$isLogged) : ?>
         <nav id="navbar">
             <a class="<?= $isActive("about") ?>" href="<?= $app->link('about') ?>">Om oss</a>
             <a class="<?= $isActive("users") ?>" href="<?= $app->link('users') ?>">Community</a>
@@ -40,9 +36,6 @@ $isLogged = isset($_SESSION["user"]);
             <a class="<?= $isActive("user/create") ?>" href="<?= $app->link('user/create') ?>">Skapa konto</a>
         <nav>
     <?php endif; ?>
-
-
-
 
 </div>
 

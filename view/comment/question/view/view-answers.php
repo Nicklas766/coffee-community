@@ -1,16 +1,10 @@
 <!-- Answer Section  -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 
     <?php foreach ($answers as $answer) : ?>
         <div class="answer">
 
-            <!-- <div class="question-title" style="display:flex; justify-content: right; padding:5px;">
-                <div style="width:20%;">
-                    <img src="<?= $this->url("img/answer.png") ?>" style="height:12px;">
-                </div>
-            </div> -->
-            <!-- Actual answer with score  -->
             <div class="avatar">
                 <a href="<?= $this->url("users/$answer->user") ?>"  style="border-bottom:1px solid grey;">
                     <div style="width:100%; color:#272727; margin-bottom:5px;"><?= $answer->user ?></div>
@@ -29,10 +23,10 @@
                     <!-- like or dislike -->
                     <i class="like material-icons">keyboard_arrow_up</i>
 
-                    <?php if($answer->vote->score === null) : ?>
+                    <?php if ($answer->vote->score === null) : ?>
                         <h1>0</h1>
                     <?php endif; ?>
-                    <?php if($answer->vote->score !== null) : ?>
+                    <?php if ($answer->vote->score !== null) : ?>
                         <h1><?= $answer->vote->score ?></h1>
                     <?php endif; ?>
 
@@ -57,7 +51,7 @@
 
                 <div style="width:10%;">
                     <!-- Accepted answer or not  -->
-                    <?php if($answer->accepted == "yes") : ?>
+                    <?php if ($answer->accepted == "yes") : ?>
                         <img src="<?= $this->url("img/checked.png") ?>">
                     <?php else : ?>
                         <img class="acceptme" src="<?= $this->url("img/answer.png") ?>" style="height:24px;">
@@ -73,15 +67,15 @@
                     <div class="poptext">
                     <?php foreach ($answer->vote->likes as $like) : ?>
 
-                        <?php if($like->upVote != null) : ?>
+                        <?php if ($like->upVote != null) : ?>
                             <p><?= $like->user ?> gillar denna fråga</p>
                         <?php endif; ?>
 
-                        <?php if($like->downVote != null) : ?>
+                        <?php if ($like->downVote != null) : ?>
                             <p><?= $like->user ?> ogillar denna fråga</p>
                         <?php endif; ?>
                     <?php endforeach; ?>
-                    <?php if($answer->vote->likes == null) : ?>
+                    <?php if ($answer->vote->likes == null) : ?>
                         <h1>Ingen har röstat på frågan än</h1>
                     <?php endif; ?>
                 </div>
@@ -91,7 +85,7 @@
 
         <!--    Commments     -->
         <?php foreach ($answer->comments as $comment) : ?>
-            <div class="comment">
+            <div class="comment" style="display:none;">
                 <div style="width:10%; text-align: left;">
                     <img style="height:60px;" src="<?= $comment->img ?>">
                     <a href="<?= $this->url("users/$comment->user") ?>"> <?= $comment->user ?></a>
