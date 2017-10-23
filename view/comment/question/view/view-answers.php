@@ -3,14 +3,14 @@
 
 
     <?php foreach ($answers as $answer) : ?>
-        <div class="answer">
+        <div class="answer" id="answer<?= $answer->id ?>">
 
             <div class="avatar">
                 <a href="<?= $this->url("users/$answer->user") ?>"  style="border-bottom:1px solid grey;">
                     <div style="width:100%; color:#272727; margin-bottom:5px;"><?= $answer->user ?></div>
                     <img src="<?=  $answer->img ?>">
                 </a>
-                <p>100 <img src="<?= $this->url("img/star.png") ?>"></p>
+                <p><?= $answer->userObj->reputation ?> <img src="<?= $this->url("img/star.png") ?>"></p>
              </div>
 
              <div class="question-text">
@@ -95,7 +95,7 @@
                     <?= $comment->markdown?>
                 </div>
 
-                <div class="comment-vote" style="width:20%; display:flex; justify-content:center;">
+                <div class="comment-vote" style="width:20%; display:flex; justify-content:center; align-items: center;">
                     <h3><?= $comment->vote->score ?></h3>
                     <!-- like or dislike -->
                     <i class="like material-icons">thumb_up</i>

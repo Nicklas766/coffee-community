@@ -13,7 +13,7 @@
             <div style="width:100%; color:#272727; margin-bottom:5px;"><?= $question->user ?></div>
             <img src="<?=  $question->question->img ?>">
         </a>
-            <p>100 <img src="<?= $this->url("img/star.png") ?>"></p>
+            <p><?=  $question->userObj->reputation ?> <img src="<?= $this->url("img/star.png") ?>"></p>
         </div>
 
         <div class="question-text">
@@ -93,7 +93,7 @@
                 <?= $comment->markdown?>
             </div>
 
-            <div class="comment-vote" style="width:20%; display:flex; justify-content:center;">
+            <div class="comment-vote" style="width:20%; display:flex; justify-content:center; align-items: center;">
                 <h3><?= $comment->vote->score ?></h3>
                 <!-- like or dislike -->
                 <i class="like material-icons">thumb_up</i>
@@ -123,7 +123,7 @@
              <option value="<?= $this->url("question/$question->id/date")   . "?" . $_SERVER['QUERY_STRING'] ?>">Datum</option>
              <option value="<?= $this->url("question/$question->id/points")   . "?" . $_SERVER['QUERY_STRING'] ?>">Poäng</option>
              <option value="<?= $this->url("question/$question->id/vote")   . "?" . $_SERVER['QUERY_STRING'] ?>">Röster</option>
-             <option value="<?= $this->url("question/$question->id/accept")   . "?" . $_SERVER['QUERY_STRING'] ?>">Accepterade</option>
+             <option value="<?= $this->url("question/$question->id/accepted")   . "?" . $_SERVER['QUERY_STRING'] ?>">Accepterade</option>
         </select>
     </div>
     <div style="width:10%; display:flex; justify-content:center; align-items:center;">

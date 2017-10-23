@@ -24,9 +24,11 @@
         <?php $this->renderRegion("header") ?>
     <?php endif; ?>
 
+    <div style="min-height:800px;">
     <?php if ($this->regionHasContent("main")) : ?>
         <?php $this->renderRegion("main") ?>
     <?php endif; ?>
+    </div>
 
     <?php if ($this->regionHasContent("footer")) : ?>
         <?php $this->renderRegion("footer") ?>

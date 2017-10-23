@@ -37,6 +37,11 @@ return [
             "file" => __DIR__ . "/route/comment/admin.php",
         ],
         [
+            // Routers for the user parts mounts on edit/
+            "mount" => "edit",
+            "file" => __DIR__ . "/route/comment/edit.php",
+        ],
+        [
             // For debugging and development details on Anax
             "mount" => "debug",
             "file" => __DIR__ . "/route/debug.php",

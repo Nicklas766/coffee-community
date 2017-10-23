@@ -1,42 +1,29 @@
 <script>
 
-function ajaxSoftPost(url, data) {
-    $.ajax({
-            type: "POST",
-            url: url,
-            data: data,
-            success: function(data){
-                // console.log(data);
-                $.ajax({
-                        type: "GET",
-                        url: currentUrl,
-                        success: function(res) {
-                            $('.question .question-sidebar h1').replaceWith($(res).find('.question .question-sidebar h1'));
-                            for (i = 0; i < $('.answer .question-sidebar h1').length; i++) {
-                                $('.answer .question-sidebar h1')[i].replaceWith($(res).find('.answer .question-sidebar h1')[i]);
-                            }
-                            for (i = 0; i < $('.popup').length; i++) {
-                                $('.popup')[i].replaceWith($(res).find('.popup')[i]);
-                            }
-                            for (i = 0; i < $('.avatar p').length; i++) {
-                                $('.avatar p')[i].replaceWith($(res).find('.avatar p')[i]);
-                            }
-                            for (i = 0; i < $('.comment-vote h3').length; i++) {
-                                $('.comment-vote h3')[i].replaceWith($(res).find('.comment-vote h3')[i]);
-                            }
-                            for (i = 0; i < $('.question-info span').length; i++) {
-                                $('.question-info span')[i].replaceWith($(res).find('.question-info span')[i]);
-                            }
-                            for (i = 0; i < $('.question-info div:nth-child(4)').length; i++) {
-                                $('.question-info div:nth-child(4)')[i].replaceWith($(res).find('.question-info div:nth-child(4)')[i]);
-                            }
-                    }
-                });
-            }
-        });
-    }
 
-function ajaxPost(url, data) {
+
+    function ajaxPost(url, data) {
+        $.ajax({
+                type: "POST",
+                url: url,
+                data: data,
+                success: function(data){
+                    // console.log(data);
+                    $.ajax({
+                            type: "GET",
+                            url: currentUrl,
+                            success: function(res) {
+                                $("body").html(res);
+                        }
+                    });
+                }
+            });
+        }
+
+// Uppdatera enligt parentid
+function ajaxThisPost(url, data) {
+    var parentId = data.parentId;
+    var parentType = data.parentType;
     $.ajax({
             type: "POST",
             url: url,
@@ -47,7 +34,28 @@ function ajaxPost(url, data) {
                         type: "GET",
                         url: currentUrl,
                         success: function(res) {
-                            $('body').html(res);
+                            // question update
+                            if (parentType == "post") {
+                                // question h1,  popup, amount of likes,
+                                $('.question .question-sidebar h1').replaceWith($(res).find('.question .question-sidebar h1'));
+                                $('.question .popup').replaceWith($(res).find('.question .popup'));
+                                $(".question .question-info div:nth-child(2)").html(($(res).find(".question .question-info div:nth-child(2)").html()));
+                                // Answer h1,  popup, amount of likes,
+                                $("#answer" + parentId + ".answer .question-sidebar h1").replaceWith($(res).find("#answer" + parentId + ".answer .question-sidebar h1"));
+                                $("#answer" + parentId + '.answer .popup').replaceWith($(res).find("#answer" + parentId + '.answer .popup'));
+                                $("#answer" + parentId + '.answer .question-info div:nth-child(2)').html(($(res).find("#answer" + parentId + '.answer .question-info div:nth-child(2)').html()));
+                            }
+
+                            // Accept answer
+                            if (parentType == "answer") {
+                                $("#answer" + parentId + '.answer .question-info div:nth-child(4)').html(($(res).find("#answer" + parentId + '.answer .question-info div:nth-child(4)').html()));
+                            }
+
+                            if (parentType == "comment") {
+                                for (i = 0; i < $('.comment-vote h3').length; i++) {
+                                    $('.comment-vote h3')[i].replaceWith($(res).find('.comment-vote h3')[i]);
+                                }
+                            }
                     }
                 });
             }
@@ -83,42 +91,36 @@ function ajaxPost(url, data) {
 <script type='text/javascript'>
 
     // Get needed urls
+
     var currentUrl  = "<?= $this->currentUrl() . "?" . $_SERVER['QUERY_STRING']?>";
     var acceptUrl   = "<?= $this->url("question/accept")?>";
     var commentUrl  = "<?= $this->url("question/comment")?>";
     var voteUrl     = "<?= $this->url("question/vote")?>";
 
-
 $(document).ready(function() {
-
-
 
     // Up and down vote for answers and questions
     $(".votes").children(".like").click(function() {
         var parentId = $(this).next().next().next().val();
-            ajaxSoftPost(voteUrl, {parentType: "post", parentId: parentId, upVote: 1});
-        });
+        ajaxThisPost(voteUrl, {parentType: "post", parentId: parentId, upVote: 1});
+    });
 
     $(".votes").children(".dislike").click(function() {
         var parentId = $(this).next().val();
-            ajaxSoftPost(voteUrl, {parentType: "post", parentId: parentId, downVote: 1});
-        });
+        ajaxThisPost(voteUrl, {parentType: "post", parentId: parentId, downVote: 1});
+    });
 
     // Up and down vote for comments
     $(".comment-vote").children(".like").click(function() {
-        console.log("iwasclicked");
         var parentId = $(this).next().next().val();
-                console.log(parentId);
-            ajaxSoftPost(voteUrl, {parentType: "comment", parentId: parentId, upVote: 1});
-        });
+        ajaxThisPost(voteUrl, {parentType: "comment", parentId: parentId, upVote: 1});
+    });
 
     // Up and down vote for comments
     $(".comment-vote").children(".dislike").click(function() {
-        console.log("iwasclicked");
         var parentId = $(this).next().val();
-            console.log(parentId);
-            ajaxSoftPost(voteUrl, {parentType: "comment", parentId: parentId, downVote: 1});
-        });
+        ajaxThisPost(voteUrl, {parentType: "comment", parentId: parentId, downVote: 1});
+    });
 
 
 
@@ -141,7 +143,7 @@ $(document).ready(function() {
     $(".acceptme").on("click", function(){
         id = $(this).next().val();
         url = acceptUrl + "/" + id;
-        ajaxSoftPost(url, {});
+        ajaxThisPost(url, {parentId:id, parentType:"answer"});
     });
 
 
@@ -157,11 +159,10 @@ $(document).ready(function() {
     });
     // Show popup
     $(".question-info div:nth-child(2)").click(function(){
-        console.log("yay me");
         var popup = $(this).parent().next('.popup');
-        popup.css("display","block");
+        popup.css("display", "block");
 
-       popup.children(".popclose").click(function() {
+        popup.children(".popclose").click(function() {
             popup.css("display","none");
         });
     });

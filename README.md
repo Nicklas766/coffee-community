@@ -38,7 +38,14 @@ https://knowledge.klarna.com/  // Cool design för tags och top contribitours
 5. Ring boban och be om att han mejlar kennet ✔
 
 
-ha en query för up eller down, du gör ändringar i config och view även comment
+## LISTA ikväll.
+1. Fixa översikt av frågor.
+2. Ladda upp och se till så alla krav 1,2,3 är 100% klara.
+3. integrera edit routes
+
+## PROBLEM MED AJAX VID SORTERING, LISTAN BLIR JU NY.
+
+Jag märkte ett fel, jag har ju lista, så det blir fel vid return, ha id.
 
 # Krav 1, 2, 3: Grunden MODULEN
 

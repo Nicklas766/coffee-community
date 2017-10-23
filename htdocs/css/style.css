@@ -181,11 +181,12 @@ footer {
 .header {
     width:100%;
     background:#272727;
-    height:200px;
+    height:140px;
+    padding-top:10px;
 }
 
 .header img {
-    height:160px;
+    height:100px;
 }
 
 
@@ -376,7 +377,7 @@ border:none;
 /* WHEN IMAGE CLICKED */
 .popup {
     display: none;
-    background: #D52A55;;
+    background: orange;
     position: fixed;
     top: 0;
     left: 0;
@@ -387,6 +388,7 @@ border:none;
     height: 500px;
     width: 50%;
     margin: auto;
+    z-index: 100;
 }
 
 .popup-top {
