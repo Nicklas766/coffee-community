@@ -1,5 +1,15 @@
-<div class="login-wrapper">
-    <h3> Skapa ditt konto </h3>
-    <?= $form ?>
-    <a href="<?= $this->url('user/login')?>"> Logga in </a>
+<div class="container" style="background:#1F9C70;">
+
+    <div class="text-container" style="text-align:center; background:#1F9C70;">
+        <h1> Joina vår community! </h1>
+        <img src="<?= $app->link("img/coffee-cup(1).png") ?>" style="height:64px;">
+        <p> Så du kan ställa frågor eller dela med dig!</p>
+
+        <!-- img style -->
+    <img src="<?= $app->link("img/coffee-beans.png") ?>" style="float:left;">
+    <img src="<?= $app->link("img/cookie.png") ?>" style="float:right;">
+
+    <div style="margin:auto; width:60%;">
+        <?= $form ?>
+        </div>
 </div>

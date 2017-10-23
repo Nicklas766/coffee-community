@@ -1,7 +1,7 @@
 
 <div class="container" style="text-align:center; font-size:16px; color:white; background:#D52A55;">
 
-    <img src="<?= $app->link("img/team.png") ?>" style="height:128px;">
+    <img src="<?= $app->link("img/team4.png") ?>" style="height:128px;">
     <h1 style="font-family: 'Passion One', cursive;"> Överblick av vår Community </h1>
     <p> Titta på de senaste frågorna eller våra mest aktiva användare.</p>
 
@@ -45,9 +45,6 @@
                 <div style="width:10%; color:#D52A55;">
                     <h1><i class="material-icons">people</i><?= count($question->question->vote->likes) ?></h1>
                 </div>
-
-
-
 
             </div>
         <?php endforeach; ?>

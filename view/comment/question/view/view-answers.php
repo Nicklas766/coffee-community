@@ -48,12 +48,22 @@
             </div>
 
 
-            <div class="question-info">
-                <span><?= count($answer->vote->likes) ?></span><i class="material-icons">thumbs_up_down</i>
-                <?= count($answer->comments) ?><i class="material-icons">comment</i>
-                <?= $answer->created ?>
-            </div>
+            <!-- Info for the question, comments, tags, likes -->
+            <div class="question-info" style="display:flex; justify-content:center; align-items:center;">
+                <div style="width:20%;">
+                    <p class="kommentera">Kommentera</p>
+                </div>
+                <div style="margin-left: 50%; width:10%;">
+                    <?= count($answer->vote->likes) ?></span><i class="like material-icons">thumbs_up_down</i>
+                </div>
+                <div style="width:10%;">
+                    <?= count($answer->comments) ?><i class="dislike material-icons">comment</i>
+                </div>
 
+                <div style="width:0;">
+
+                </div>
+            </div>
 
             <!-- Popup for dislikes-->
             <div class="popup">
@@ -101,8 +111,6 @@
 
 
 
-        <!--    Make comment form     -->
-        <p class="kommentera"><i class="material-icons">comment</i>Kommentera</p>
         <form style="width:100%;" method="POST">
             <textarea></textarea>
             <input type="hidden" value="<?=$answer->id?>">

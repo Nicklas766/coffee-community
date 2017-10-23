@@ -55,9 +55,12 @@ function ajaxPost(url, data) {
 
 
 <div class="question-wrapper">
+
     <?php if ($this->regionHasContent("question")) : ?>
         <?php $this->renderRegion("question") ?>
     <?php endif; ?>
+
+
 
     <?php if ($this->regionHasContent("answer")) : ?>
         <?php $this->renderRegion("answer") ?>
@@ -82,19 +85,8 @@ function ajaxPost(url, data) {
     var voteUrl     = "<?= $this->url("question/vote")?>";
 
 
-    $(document).ready(function() {
-        $(".question-info").click(function(){
-            var popup = $(this).next('.popup');
-            popup.css("display","block");
-
-           popup.children(".popclose").click(function() {
-                popup.css("display","none");
-            });
-        });
-    });
-
-
 $(document).ready(function() {
+
 
 
     // Up and down vote for answers and questions
@@ -124,13 +116,7 @@ $(document).ready(function() {
             ajaxSoftPost(voteUrl, {parentType: "comment", parentId: parentId, downVote: 1});
         });
 
-    // Hide forms except last, and add click to show forms
-    $("form:not(:last)").hide();
-    $("form").prev(".kommentera").click(function() {
-        $(this).next().toggle("slow", function() {
-              // Animation complete.
-        });
-    });
+
 
     // Post a comment
     $(".send-comment").click(function() {
@@ -153,6 +139,35 @@ $(document).ready(function() {
         url = acceptUrl + "/" + id;
         ajaxPost(url, {});
     });
+
+
+
+    // Hide forms except last, and add click to show forms
+    $("form:not(:last)").hide();
+
+    // Show comment form
+    $(".question-info div:nth-child(1)").click(function() {
+        $(this).parent().parent().children("form").toggle("slow", function() {
+              // Animation complete.
+        });
+    });
+    // Show popup
+    $(".question-info div:nth-child(2)").click(function(){
+        console.log("yay me");
+        var popup = $(this).parent().next('.popup');
+        popup.css("display","block");
+
+       popup.children(".popclose").click(function() {
+            popup.css("display","none");
+        });
+    });
+    // toggle comments
+    $(".question-info div:nth-child(3)").click(function() {
+        $(this).parent().parent().children(".comment").animate({height: 'toggle'});
+    });
+
+
+
 
 
 

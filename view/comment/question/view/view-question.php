@@ -36,13 +36,24 @@
             </div>
         </div>
 
-        <div class="question-info">
-            <span><?= count($question->question->vote->likes) ?></span><i class="like material-icons">thumbs_up_down</i>
-            <?= count($question->question->comments) ?><i class="dislike material-icons">comment</i>
+        <!-- Info for the question, comments, tags, likes -->
+        <div class="question-info" style="display:flex; justify-content:center; align-items:center;">
+            <div style="width:20%;">
+                <p class="kommentera">Kommentera</p>
+            </div>
+            <div style="margin-left: 50%; width:10%;">
+                <?= count($question->question->vote->likes) ?></span><i class="like material-icons">thumbs_up_down</i>
+            </div>
+            <div style="width:10%;">
+                <?= count($question->question->comments) ?><i class="dislike material-icons">comment</i>
+            </div>
+
+            <div style="width:10%;">
             <!-- Tags for question  -->
             <?php foreach ($question->tags as $tag) : ?>
                 <a href="<?= $this->url("question/tagged/$tag") ?>"><?= $tag ?></a>
             <?php endforeach; ?>
+            </div>
         </div>
 
         <!-- Popup for dislikes-->
@@ -95,7 +106,7 @@
 
 
     <!--    Make comment form     -->
-    <p class="kommentera"><i class="material-icons">comment</i>Kommentera</p>
+    <!-- <p class="kommentera"><i class="material-icons">comment</i>Kommentera</p> -->
     <form style="width:100%" method="POST">
         <textarea></textarea>
         <input type="hidden" value="<?=$question->question->id?>">

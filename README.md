@@ -14,7 +14,7 @@ https://knowledge.klarna.com/  // Cool design för tags och top contribitours
 # lista
 1. Ändra så alla views är bra, tagga sedan modulen git push och integrera i coffee-community hemsidan
 2. pagerender kan vara i projektets egna src, bara att fixa DI ✔
-3. Skapa jquery för votes vyerna och titta så de stämmer
+3. Skapa jquery för votes vyerna och titta så de stämmer ✔
 
 
 # lista idag
@@ -30,9 +30,12 @@ https://knowledge.klarna.com/  // Cool design för tags och top contribitours
 8. Integrera nya views till coffee-community
 
 
-
-
-# VIKTIGT GÖR SÅ MAN KAN REDIGERA SINA FRÅGOR, KOMMENTARER, SVAR
+## Lista imorgon.
+1. Se till så reputation syns vid questions.  ✔
+2. Fixa profilsida. Gör admin sida helt ok. ✔
+3. Fixa så man kan acceptera svar på ett snyggt sätt
+4. Gör några kontroller efter buggar.  // Fixat sorteringen på svaren för frågor.
+5. Ring boban och be om att han mejlar kennet ✔
 
 
 ha en query för up eller down, du gör ändringar i config och view även comment
