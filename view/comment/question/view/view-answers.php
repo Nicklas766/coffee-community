@@ -5,6 +5,11 @@
     <?php foreach ($answers as $answer) : ?>
         <div class="answer">
 
+            <!-- <div class="question-title" style="display:flex; justify-content: right; padding:5px;">
+                <div style="width:20%;">
+                    <img src="<?= $this->url("img/answer.png") ?>" style="height:12px;">
+                </div>
+            </div> -->
             <!-- Actual answer with score  -->
             <div class="avatar">
                 <a href="<?= $this->url("users/$answer->user") ?>"  style="border-bottom:1px solid grey;">
@@ -16,16 +21,6 @@
 
              <div class="question-text">
                 <?= $answer->markdown ?>
-
-
-                <!-- Accepted answer or not  -->
-                <?php if($answer->accepted == "yes") : ?>
-                    <p>Im accepted</p>
-                <?php else : ?>
-                    <p class="acceptme">acceptme</p>
-                    <input type="hidden" value="<?= $answer->id?>">
-                <?php endif; ?>
-
             </div>
 
             <!-- Score stats -->
@@ -60,7 +55,14 @@
                     <?= count($answer->comments) ?><i class="dislike material-icons">comment</i>
                 </div>
 
-                <div style="width:0;">
+                <div style="width:10%;">
+                    <!-- Accepted answer or not  -->
+                    <?php if($answer->accepted == "yes") : ?>
+                        <img src="<?= $this->url("img/checked.png") ?>">
+                    <?php else : ?>
+                        <img class="acceptme" src="<?= $this->url("img/answer.png") ?>" style="height:24px;">
+                        <input type="hidden" value="<?= $answer->id?>">
+                    <?php endif; ?>
 
                 </div>
             </div>

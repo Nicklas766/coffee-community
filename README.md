@@ -33,7 +33,7 @@ https://knowledge.klarna.com/  // Cool design för tags och top contribitours
 ## Lista imorgon.
 1. Se till så reputation syns vid questions.  ✔
 2. Fixa profilsida. Gör admin sida helt ok. ✔
-3. Fixa så man kan acceptera svar på ett snyggt sätt
+3. Fixa så man kan acceptera svar på ett snyggt sätt ✔
 4. Gör några kontroller efter buggar.  // Fixat sorteringen på svaren för frågor.
 5. Ring boban och be om att han mejlar kennet ✔
 
