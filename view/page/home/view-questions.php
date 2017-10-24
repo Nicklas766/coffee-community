@@ -17,7 +17,7 @@
                 <div style="width:25%;">
 
                     <!-- User -->
-                    <p><a href="<?= $this->url("users/$question->user") ?>">skapad av <?= $question->user ?></a></p>
+                    <p style="margin-bottom:4px;"><a href="<?= $this->url("users/$question->user") ?>">skapad av <?= $question->user ?></a></p>
                     <?= $question->created ?>
 
                     <div style="width:100%; ">
@@ -29,7 +29,7 @@
 
                 <!-- QQuestion-->
                 <div class="question-text" style="width:50%; min-height:100%;">
-                    <h3><a href="<?= $this->url("question/$question->id") ?>"><?= $question->title ?></a></h3>
+                    <h3><a style="color:#A82286;" href="<?= $this->url("question/$question->id") ?>"><?= $question->title ?></a></h3>
                 </div>
 
              <!-- INFO -->
