@@ -4,66 +4,49 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/Nicklas766/coffee-community/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Nicklas766/coffee-community/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Nicklas766/coffee-community/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Nicklas766/coffee-community/?branch=master)
 
-# Idéer
-Ha samma design för användare som på b1tre bildgalleri.
 
-https://knowledge.klarna.com/  // Cool design för tags och top contribitours
+# Guide
 
-// Ha en "this customer is liked" eller disliked :(.
+This is a frontend for an [anax module](https://github.com/Nicklas766/Comment). All you have to do is download this repo, later
+you just do "composer install update" and you should have your own coffee-community!
 
-# lista
-1. Ändra så alla views är bra, tagga sedan modulen git push och integrera i coffee-community hemsidan
-2. pagerender kan vara i projektets egna src, bara att fixa DI ✔
-3. Skapa jquery för votes vyerna och titta så de stämmer ✔
+## Get your own Coffee-Community
+```
+git clone https://github.com/Nicklas766/coffee-community.git
 
+// Or download as ZIP, whatever you prefer.
+```
 
-# lista idag
-1. Gör så man kan rösta på kommenterarer och frågor. ✔
-2. Sorteringskrav på krav 4  ✔
-3. Koppla svar till frågorna samt rank ✔
-4. Krav 5 funktion ✔
-5. Skapa översikt av alla användare ✔
-6. Gör så man kan se en användares profil ✔
-7. Visa en översikt på användarens sida om all aktivitet som användaren gjort, dvs frågor, svar, kommentarer, antalet röstningar gjorda samt vilket rykte användaren har. ✔
+Go to `vendor/nicklas/comment/src/sql/setup.sql` and setup the database.
+Go to `config/database.php` to change it to your database.
 
+```
+composer install
+```
 
-8. Integrera nya views till coffee-community
+And you're done! If you want to make your own frontend from scratch, then you can follow the guide
+[here.](https://github.com/Nicklas766/Comment)
 
 
-## Lista imorgon.
-1. Se till så reputation syns vid questions.  ✔
-2. Fixa profilsida. Gör admin sida helt ok. ✔
-3. Fixa så man kan acceptera svar på ett snyggt sätt ✔
-4. Gör några kontroller efter buggar.  // Fixat sorteringen på svaren för frågor.
-5. Ring boban och be om att han mejlar kennet ✔
+
+# VIKTIGT
+# VIKTIGT
+# VIKTIGT
+# VIKTIGT
+"accepted answers är som badges"
+"posts"
+
+Kanske finns bättre sätt att redigera.
+
+# VIKTIGT
+# VIKTIGT
+# VIKTIGT
+# VIKTIGT
+# VIKTIGT
 
 
-## LISTA ikväll.
-1. Fixa översikt av frågor.
-2. Ladda upp och se till så alla krav 1,2,3 är 100% klara.
-3. integrera edit routes
 
-## PROBLEM MED AJAX VID SORTERING, LISTAN BLIR JU NY.
 
-Jag märkte ett fel, jag har ju lista, så det blir fel vid return, ha id.
-
-# Krav 1, 2, 3: Grunden MODULEN
-
-| Krav                                                                                                                                                                                                                  |                Checkbox                |
-|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:--------------------------------------:|
-| Skapa ett nytt repo för projektet, spara i me/kmom10.                                                                                                                                                                 |                   ✔                    |
-| Webbsidan skall skyddas av inloggning. Det skall gå att skapa en ny användare. Användaren skall ha en profil som kan uppdateras. Användarens bild skall vara en gravatar.                                             |                   ✔                    |
-| Webbplatsen skall ha en förstasida, en sida för frågor, en sida för taggar och en sida för användare. Det skall finnas en About-sida med information om webbplatsen, dess GitHub-repo och dig själv.                  |                   ✔                    |
-| En användare kan ställa frågor, eller besvara dem. Alla inlägg som en användare gör kan kopplas till denna. Klickar man på en användare så ser man vilka frågor som användaren ställt och vilka frågor som besvarats. |                   ✔                    |
-| En fråga kan ha en eller flera taggar kopplade till sig. När man listar en tagg kan man se de frågor som har den taggen. Klicka på en tagg för att komma till de frågor som har taggen kopplat till sig.              |                   ✔                    |
-| En fråga kan ha många svar. Varje fråga och svar kan i sin tur ha kommentarer kopplade till sig.                                                                                                                      |                   ✔                    |
-| Alla frågor, svar och kommentarer skrivs i Markdown.                                                                                                                                                                  |          Behövs kontrolleras           |
-| Förstasidan skall ge en översikt av senaste frågor tillsammans med de mest populära taggarna och de mest aktiva användarna.                                                                                           | Allt går förutom mest aktiva användare |
-| Webbplatsen skall finnas på GitHub, tillsammans med en README som beskriver hur man checkar ut och installerar sin egen version.                                                                                      |                 Halva                  |
-| Webbplatsen skall finnas i drift med innehåll på studentservern.                                                                                                                                                      |                   X                    |
-| Kommandot make test skall passera för källkoden.                                                                                                                                                                      |          Behövs kontrolleras           |
-| Repot på GitHub skall vara länkat till en byggtjänst likt Travis/CircleCI och till en tjänst för kodkvalitet likt Scrutinizer/CodeClimate. README-filen på GitHub innehåller motsvarande badges.                      |                   X                    |
-|                                                                                                                                                                                                                       |                                        |
 
 
 # Krav 1, 2, 3: Grunden COFFEE-COMMUNITY
@@ -78,13 +61,11 @@ Jag märkte ett fel, jag har ju lista, så det blir fel vid return, ha id.
 | En fråga kan ha många svar. Varje fråga och svar kan i sin tur ha kommentarer kopplade till sig.                                                                                                                      |    ✔     |
 | Alla frågor, svar och kommentarer skrivs i Markdown.                                                                                                                                                                  |    ✔     |
 | Förstasidan skall ge en översikt av senaste frågor tillsammans med de mest populära taggarna och de mest aktiva användarna.                                                                                           |    ✔     |
-| Webbplatsen skall finnas på GitHub, tillsammans med en README som beskriver hur man checkar ut och installerar sin egen version.                                                                                      |    X     |
-| Webbplatsen skall finnas i drift med innehåll på studentservern.                                                                                                                                                      |    X     |
-| Kommandot make test skall passera för källkoden.                                                                                                                                                                      |    X     |
+| Webbplatsen skall finnas på GitHub, tillsammans med en README som beskriver hur man checkar ut och installerar sin egen version.                                                                                      |    ✔     |
+| Webbplatsen skall finnas i drift med innehåll på studentservern.                                                                                                                                                      |    ✔     |
+| Kommandot make test skall passera för källkoden.                                                                                                                                                                      |    ✔     |
 | Repot på GitHub skall vara länkat till en byggtjänst likt Travis/CircleCI och till en tjänst för kodkvalitet likt Scrutinizer/CodeClimate. README-filen på GitHub innehåller motsvarande badges.                      |    ✔     |
 |                                                                                                                                                                                                                       |          |
-
-
 
 
 
@@ -98,8 +79,6 @@ Jag märkte ett fel, jag har ju lista, så det blir fel vid return, ha id.
 | Svaren på en fråga kan sorteras och visas antingen enligt datum, eller rank (antalet röster).                                                                                |    ✔     |
 | Översikten av frågorna visar hur många svar en fråga har samt vilken rank.                                                                                                   |    ✔     |
 |                                                                                                                                                                              |          |
-
-
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 EJ PÅBÖRJAD
@@ -117,7 +96,6 @@ Summera allt och sätt det till användarens rykte.
 Visa en översikt på användarens sida om all aktivitet som användaren gjort, dvs frågor, svar, kommentarer, antalet röstningar gjorda samt vilket rykte användaren har.
 
 Du kan efter eget tycke modifiera reglerna för hur användarens rykte beräknas.
-
 
 
 # Krav 6 (optionell)

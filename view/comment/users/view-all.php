@@ -20,8 +20,7 @@
                     <li>Reg: <?= strtok($user->created, " ") ?> </li>
                 </ul>
             </li>
-            <?php endforeach; ?>
-
+                <?php endforeach; ?>
         </ul>
     </div>
 </div>

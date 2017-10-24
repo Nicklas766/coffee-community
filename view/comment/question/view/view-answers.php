@@ -7,14 +7,16 @@
 
             <div class="avatar">
                 <a href="<?= $this->url("users/$answer->user") ?>"  style="border-bottom:1px solid grey;">
-                    <div style="width:100%; color:#272727; margin-bottom:5px;"><?= $answer->user ?></div>
+                    <div style="width:100%; color:#272727; margin:10px 0 5px 0;"><?= $answer->user ?></div>
                     <img src="<?=  $answer->img ?>">
                 </a>
                 <p><?= $answer->userObj->reputation ?> <img src="<?= $this->url("img/star.png") ?>"></p>
              </div>
 
              <div class="question-text">
-                <?= $answer->markdown ?>
+                 <div style="padding:10px;padding-top: 30px;">
+                    <?= $answer->markdown ?>
+                </div>
             </div>
 
             <!-- Score stats -->
@@ -66,7 +68,6 @@
                     <span class="popclose">X</span>
                     <div class="poptext">
                     <?php foreach ($answer->vote->likes as $like) : ?>
-
                         <?php if ($like->upVote != null) : ?>
                             <p><?= $like->user ?> gillar denna fråga</p>
                         <?php endif; ?>
@@ -113,4 +114,4 @@
             <p class="send-comment">Skicka</p>
         </form>
     </div>
-<?php endforeach; ?>
+    <?php endforeach; ?>

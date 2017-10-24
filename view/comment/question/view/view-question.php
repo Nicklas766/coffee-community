@@ -10,14 +10,16 @@
 
         <div class="avatar">
         <a href="<?= $this->url("users/$question->user") ?>"  style="border-bottom:1px solid grey;">
-            <div style="width:100%; color:#272727; margin-bottom:5px;"><?= $question->user ?></div>
+            <div style="width:100%; color:#272727; margin:10px 0 5px 0;"><?= $question->user ?></div>
             <img src="<?=  $question->question->img ?>">
         </a>
             <p><?=  $question->userObj->reputation ?> <img src="<?= $this->url("img/star.png") ?>"></p>
         </div>
 
         <div class="question-text">
-            <?= $question->question->markdown ?>
+            <div style="padding:10px;padding-top: 30px;">
+                <?= $question->question->markdown ?>
+            </div>
         </div>
 
 
@@ -62,7 +64,6 @@
                 <div class="poptext">
 
                 <?php foreach ($question->question->vote->likes as $like) : ?>
-
                     <?php if ($like->upVote != null) : ?>
                         <p><?= $like->user ?> gillar denna fråga</p>
                     <?php endif; ?>

@@ -123,6 +123,9 @@ p {
     font-family: 'Open Sans', sans-serif;
     letter-spacing: 1px;
 }
+form {
+    font-family: 'Open Sans', sans-serif;
+}
 
 .wrap-container {
 

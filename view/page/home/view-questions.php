@@ -55,7 +55,6 @@
 
         <h1 style="font-family: 'Passion One', cursive;"> Heder användare </h1>
             <?php foreach ($users as $user) : ?>
-
                 <a class="users-container" href="<?= $this->url("users/$user->name") ?>">
                     <img src="<?=  $user->img ?>" style="border-radius:100%;">
                         <p><?= $user->name?> </p>

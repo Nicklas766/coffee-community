@@ -1,7 +1,8 @@
 <div>
     <div>
-        <h1> Senaste frågor </h1>
+        <h1> <?= $headerTitle ?> </h1>
     </div>
+
 
 
 

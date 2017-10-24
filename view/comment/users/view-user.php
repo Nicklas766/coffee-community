@@ -1,4 +1,4 @@
-<div style="min-height:700px; background:#E96B2E; overflow:auto; ">
+<div style="min-height:800px; background:#D52A55; overflow:auto; ">
     <div style="display:flex; margin-top:24px; margin-bottom: 100px;">
 
 
@@ -12,6 +12,7 @@
                 <h3> Profilsida</h3>
                 <img src="<?=$user->img ?>">
                 <li><?= $user->reputation ?> <img src="<?= $this->url("img/star.png") ?>"></li>
+                <li><?= $user->acceptedAnswers ?> <img src="<?= $this->url("img/checked.png") ?>" style="height:16px;"></li>
             </div>
 
 
@@ -46,7 +47,6 @@
         <div style="width:50%">
             <h3>Användarens röst historik <i class="material-icons">thumbs_up_down</i></h3>
             <?php foreach ($user->votes->likes as $vote) : ?>
-
                 <?php if ($vote->upVote != null) : ?>
                     <li><?=$user->name ?> gillade en <?= $vote->parentType ?></li>
                 <?php endif; ?>

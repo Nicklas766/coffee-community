@@ -20,7 +20,7 @@
                 <img style="vertical-align: middle;"src="<?= $app->link("img/tag-black-shape.png") ?>">
                 <?= "$key($value)" ?>
         </a>
-    <?php endforeach ; ?>
+        <?php endforeach ; ?>
     </div>
 </div>
 </div>

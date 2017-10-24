@@ -129,14 +129,10 @@ $(document).ready(function() {
         console.log("iwasclicked");
         var id = $(this).prev().val();
         var text =  $(this).prevAll('textarea').nextAll()[1].innerText;
-
         var url = commentUrl + "/" + id; // the script where you handle the form input.
-        if (text == "") {
-            return true;
-        }
+
         ajaxPost(url, {text: text});
-        console.log(id);
-        console.log(text);
+
     });
 
     // Accept an answer

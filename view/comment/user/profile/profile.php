@@ -10,6 +10,7 @@
             <h3> Profilsida</h3>
             <img src="<?=$user->img ?>">
             <li><?= $user->reputation ?> <img src="<?= $this->url("img/star.png") ?>"></li>
+            <li><?= $user->acceptedAnswers ?> <img src="<?= $this->url("img/checked.png") ?>" style="height:16px;"></li>
         </div>
 
 
@@ -44,7 +45,6 @@
     <div style="width:50%">
         <h3>Din röst historik <i class="material-icons">thumbs_up_down</i></h3>
         <?php foreach ($user->votes->likes as $vote) : ?>
-
             <?php if ($vote->upVote != null) : ?>
                 <li>Du gillade en <?= $vote->parentType ?></li>
             <?php endif; ?>

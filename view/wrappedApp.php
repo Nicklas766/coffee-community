@@ -10,6 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- favicon -->
+    <link rel="icon" href="<?= $this->asset("img/coffee.png") ?>">
     <link href="<?= $this->asset("css/simplemde.min.css") ?>" rel="stylesheet">
     <script src="<?= $this->asset("js/jquery.min.js") ?>"></script>
 
