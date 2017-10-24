@@ -1,11 +1,12 @@
 "use strict";
 
+/* global $ */
 
 $(document).ready(function() {
     // FIXED HEADER
-    var distance = $('nav').offset().top,
-    $window = $(window);
-    // homeHeight = $('.service-banner').offset().top - 100;
+    var distance = $('nav').offset().top;
+    var $window = $(window);
+
     $("#up").clone().appendTo("nav");
 
     // Scroll events
@@ -13,8 +14,8 @@ $(document).ready(function() {
         // If scrolled enough, make navbar fixed.
         if ( $window.scrollTop() >= distance ) {
             $("nav").first().css({
-                'position' : 'fixed',
-                "background" : "#272727",
+                'position': 'fixed',
+                "background": "#272727",
             });
             $("nav a").css("line-height", "normal");
             $(".header img").css("height", "30px");
@@ -31,8 +32,8 @@ $(document).ready(function() {
         // If top of page, reset nav style
         if ( $(".header").offset().top + 83 >= $window.scrollTop() ) {
             $("nav").first().css({
-                'position' : 'relative',
-                "background" : "none",
+                'position': 'relative',
+                "background": "none",
             });
             $("#up").fadeTo("fast", 0);
             $("nav a").first().removeAttr('style');

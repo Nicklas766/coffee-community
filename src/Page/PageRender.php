@@ -56,7 +56,9 @@ class PageRender implements PageRenderInterface, InjectionAwareInterface
      * @param integer $status code to use when delivering the result.
      *
      * @return void
-     */
+     *
+     * @SuppressWarnings(PHPMD.ExitExpression)
+      */
     public function renderPage($data, $status = 200)
     {
         // get view class

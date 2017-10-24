@@ -85,7 +85,7 @@
     <!--    Commments     -->
     <?php foreach ($question->question->comments as $comment) : ?>
         <div class="comment" style="display:none;">
-            <div style="width:10%; text-align: left;">
+            <div style="width:10%; display:flex; align-items: end;">
                 <img style="height:60px;" src="<?= $comment->img ?>">
                 <a href="<?= $this->url("users/$comment->user") ?>"> <?= $comment->user ?></a>
             </div>
