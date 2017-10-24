@@ -21,7 +21,7 @@
                     <?= $question->created ?>
 
                     <div style="width:100%; ">
-                        <?php foreach($question->tags as $tag) : ?>
+                        <?php foreach ($question->tags as $tag) : ?>
                             <a href="<?= $this->url("question/tagged/$tag")?>"><?= $tag ?></a>
                         <?php endforeach; ?>
                     </div>

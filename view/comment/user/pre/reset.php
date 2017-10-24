@@ -1,4 +1,4 @@
-<div class="container" style="background:#1F9C70; min-height:800px;">
+<div class="container" style="background:#1F9C70; min-height:1000px;">
 
     <div class="text-container" style="text-align:center; background:#1F9C70;">
 
