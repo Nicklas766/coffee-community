@@ -862,16 +862,16 @@
         },
         {
             "name": "nicklas/comment",
-            "version": "1.0.6",
+            "version": "1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Nicklas766/Comment.git",
-                "reference": "44e581a137ef5a4ee6724cb94d77ba46b84255ae"
+                "reference": "a3411b4ef291e2e8499e0391852e772fd10c4045"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Nicklas766/Comment/zipball/44e581a137ef5a4ee6724cb94d77ba46b84255ae",
-                "reference": "44e581a137ef5a4ee6724cb94d77ba46b84255ae",
+                "url": "https://api.github.com/repos/Nicklas766/Comment/zipball/a3411b4ef291e2e8499e0391852e772fd10c4045",
+                "reference": "a3411b4ef291e2e8499e0391852e772fd10c4045",
                 "shasum": ""
             },
             "require": {
@@ -917,7 +917,7 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2017-10-23T15:42:18+00:00"
+            "time": "2017-10-24T11:49:22+00:00"
         },
         {
             "name": "scrivo/highlight.php",

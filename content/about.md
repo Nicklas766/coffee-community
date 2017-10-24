@@ -23,13 +23,17 @@ Vi är kaffedrickare och kaffe entusiaster, vi är schyssta mot varandra och vi
 <br>
 <br>
 <br>
-### Skolprojekt
+<br>
+<br>
+<br>
+Skolprojekt
+=========================
 
-Hela hemsidan är ett skolprojekt skapad av Nicklas Envall.
+Hela hemsidan är ett skolprojekt skapad av Nicklas Envall, jag är en student som går webbprogrammering 120p på
+Blekinge Tekniska Högskola.
 
 Hemsidans egna repo ligger på github, [här](https://github.com/Nicklas766/coffee-community).
 Hemsidan är beroende min egna [modul](https://github.com/Nicklas766/Comment).
-
 
 
 ### Hemsidan använder en rad olika snygga bilder med licens, nedan finner du credit till skaparna.

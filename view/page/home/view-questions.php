@@ -19,15 +19,17 @@
                     <!-- User -->
                     <p><a href="<?= $this->url("users/$question->user") ?>">skapad av <?= $question->user ?></a></p>
                     <?= $question->created ?>
-                    <?php foreach ($question->tags as $tag) : ?>
-                        <a href="<?= $this->url("question/tagged/$tag") ?>"><?= $tag ?></a>
 
-                    <?php endforeach; ?>
+                    <div style="width:100%; ">
+                        <?php foreach($question->tags as $tag) : ?>
+                            <a href="<?= $this->url("question/tagged/$tag")?>"><?= $tag ?></a>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
 
                 <!-- QQuestion-->
                 <div class="question-text" style="width:50%; min-height:100%;">
-                    <p><a href="<?= $this->url("question/$question->id") ?>"><?= $question->title ?></a></p>
+                    <h3><a href="<?= $this->url("question/$question->id") ?>"><?= $question->title ?></a></h3>
                 </div>
 
              <!-- INFO -->

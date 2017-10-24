@@ -21,6 +21,9 @@ input, select {
     font-size:1.1em;
     border-radius:0.1em;
 }
+fieldset {
+    border:0;
+}
 
 output {
     position: absolute;

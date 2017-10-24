@@ -12,4 +12,5 @@
     <div style="margin:auto; width:60%;">
         <?= $form ?>
         </div>
+        <li><a style="color:white" href="<?= $this->url('user/login')?>"> Tillbaka till logga in </a></li>
 </div>

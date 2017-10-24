@@ -1,4 +1,4 @@
-<div class="container" style="background:#1F9C70;">
+<div class="container" style="background:#1F9C70; min-height:800px;">
 
     <div class="text-container" style="text-align:center; background:#1F9C70;">
         <h1> Välkommen tillbaka! </h1>
@@ -12,6 +12,8 @@
     <div style="margin:auto; width:60%;">
         <?= $form ?>
         </div>
-        <a href="<?= $this->url('user/reset')?>"> Glömt lösenordet? </a>
-        <a href="<?= $this->url('user/create')?>"> Skapa konto </a>
+
+        <li><a style="color:white" href="<?= $this->url('user/reset')?>"> Glömt lösenordet? </a></li>
+        <li><a style="color:white" href="<?= $this->url('user/create')?>"> Skapa konto </a></li>
+
 </div>
